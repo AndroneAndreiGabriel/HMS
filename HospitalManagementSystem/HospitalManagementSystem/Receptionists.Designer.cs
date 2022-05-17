@@ -34,18 +34,18 @@ namespace HospitalManagementSystem
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.label16 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.RecepNameTb = new System.Windows.Forms.TextBox();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.label14 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.RecepCovidTb = new System.Windows.Forms.ComboBox();
+            this.RecepPhoneTb = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.RecepAddressTb = new System.Windows.Forms.TextBox();
             this.pictureBox9 = new System.Windows.Forms.PictureBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
+            this.EditBttn = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
@@ -56,15 +56,15 @@ namespace HospitalManagementSystem
             this.panel3 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.DeleteBttn = new System.Windows.Forms.Button();
+            this.AddBttn = new System.Windows.Forms.Button();
+            this.ReceptionistDGV = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.label5 = new System.Windows.Forms.Label();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.RecepPassTb = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
@@ -75,7 +75,7 @@ namespace HospitalManagementSystem
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ReceptionistDGV)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
@@ -106,7 +106,7 @@ namespace HospitalManagementSystem
             // 
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(662, 26);
+            this.label16.Location = new System.Drawing.Point(656, 27);
             this.label16.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(65, 23);
@@ -126,13 +126,13 @@ namespace HospitalManagementSystem
             this.label9.Text = "Nume receptionist";
             this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // textBox1
+            // RecepNameTb
             // 
-            this.textBox1.Location = new System.Drawing.Point(226, 53);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(205, 30);
-            this.textBox1.TabIndex = 51;
+            this.RecepNameTb.Location = new System.Drawing.Point(226, 53);
+            this.RecepNameTb.Margin = new System.Windows.Forms.Padding(4);
+            this.RecepNameTb.Name = "RecepNameTb";
+            this.RecepNameTb.Size = new System.Drawing.Size(205, 30);
+            this.RecepNameTb.TabIndex = 1;
             // 
             // pictureBox8
             // 
@@ -148,7 +148,7 @@ namespace HospitalManagementSystem
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(889, 26);
+            this.label14.Location = new System.Drawing.Point(879, 26);
             this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(133, 23);
@@ -156,30 +156,31 @@ namespace HospitalManagementSystem
             this.label14.Text = "Testat COVID";
             this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // comboBox2
+            // RecepCovidTb
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
+            this.RecepCovidTb.FormattingEnabled = true;
+            this.RecepCovidTb.ItemHeight = 22;
+            this.RecepCovidTb.Items.AddRange(new object[] {
             "Pozitiv",
             "Negativ"});
-            this.comboBox2.Location = new System.Drawing.Point(893, 52);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(205, 30);
-            this.comboBox2.TabIndex = 60;
+            this.RecepCovidTb.Location = new System.Drawing.Point(882, 52);
+            this.RecepCovidTb.Name = "RecepCovidTb";
+            this.RecepCovidTb.Size = new System.Drawing.Size(205, 30);
+            this.RecepCovidTb.TabIndex = 4;
             // 
-            // textBox3
+            // RecepPhoneTb
             // 
-            this.textBox3.Location = new System.Drawing.Point(439, 53);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(205, 30);
-            this.textBox3.TabIndex = 59;
+            this.RecepPhoneTb.Location = new System.Drawing.Point(444, 53);
+            this.RecepPhoneTb.Margin = new System.Windows.Forms.Padding(4);
+            this.RecepPhoneTb.Name = "RecepPhoneTb";
+            this.RecepPhoneTb.Size = new System.Drawing.Size(205, 30);
+            this.RecepPhoneTb.TabIndex = 2;
             // 
             // label13
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(435, 26);
+            this.label13.Location = new System.Drawing.Point(440, 26);
             this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(73, 23);
@@ -199,14 +200,14 @@ namespace HospitalManagementSystem
             this.label12.Text = "Adresa";
             this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // textBox2
+            // RecepAddressTb
             // 
-            this.textBox2.Location = new System.Drawing.Point(226, 123);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(205, 102);
-            this.textBox2.TabIndex = 56;
+            this.RecepAddressTb.Location = new System.Drawing.Point(226, 123);
+            this.RecepAddressTb.Margin = new System.Windows.Forms.Padding(4);
+            this.RecepAddressTb.Multiline = true;
+            this.RecepAddressTb.Name = "RecepAddressTb";
+            this.RecepAddressTb.Size = new System.Drawing.Size(205, 102);
+            this.RecepAddressTb.TabIndex = 5;
             // 
             // pictureBox9
             // 
@@ -240,15 +241,16 @@ namespace HospitalManagementSystem
             this.label6.Text = "Analize";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // button2
+            // EditBttn
             // 
-            this.button2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(604, 269);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(236, 37);
-            this.button2.TabIndex = 68;
-            this.button2.Text = "Editare receptionist";
-            this.button2.UseVisualStyleBackColor = true;
+            this.EditBttn.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.EditBttn.Location = new System.Drawing.Point(604, 269);
+            this.EditBttn.Name = "EditBttn";
+            this.EditBttn.Size = new System.Drawing.Size(236, 37);
+            this.EditBttn.TabIndex = 7;
+            this.EditBttn.Text = "Editare receptionist";
+            this.EditBttn.UseVisualStyleBackColor = true;
+            this.EditBttn.Click += new System.EventHandler(this.EditBttn_Click);
             // 
             // panel2
             // 
@@ -348,35 +350,38 @@ namespace HospitalManagementSystem
             this.pictureBox2.TabIndex = 0;
             this.pictureBox2.TabStop = false;
             // 
-            // button3
+            // DeleteBttn
             // 
-            this.button3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(861, 269);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(236, 37);
-            this.button3.TabIndex = 69;
-            this.button3.Text = "Stergere receptionist";
-            this.button3.UseVisualStyleBackColor = true;
+            this.DeleteBttn.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DeleteBttn.Location = new System.Drawing.Point(861, 269);
+            this.DeleteBttn.Name = "DeleteBttn";
+            this.DeleteBttn.Size = new System.Drawing.Size(236, 37);
+            this.DeleteBttn.TabIndex = 8;
+            this.DeleteBttn.Text = "Stergere receptionist";
+            this.DeleteBttn.UseVisualStyleBackColor = true;
+            this.DeleteBttn.Click += new System.EventHandler(this.DeleteBttn_Click);
             // 
-            // button1
+            // AddBttn
             // 
-            this.button1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(351, 269);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(236, 37);
-            this.button1.TabIndex = 67;
-            this.button1.Text = "Adaugare receptionist";
-            this.button1.UseVisualStyleBackColor = true;
+            this.AddBttn.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AddBttn.Location = new System.Drawing.Point(351, 269);
+            this.AddBttn.Name = "AddBttn";
+            this.AddBttn.Size = new System.Drawing.Size(236, 37);
+            this.AddBttn.TabIndex = 6;
+            this.AddBttn.Text = "Adaugare receptionist";
+            this.AddBttn.UseVisualStyleBackColor = true;
+            this.AddBttn.Click += new System.EventHandler(this.AddBttn_Click);
             // 
-            // dataGridView1
+            // ReceptionistDGV
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(226, 338);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(997, 220);
-            this.dataGridView1.TabIndex = 66;
+            this.ReceptionistDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.ReceptionistDGV.Location = new System.Drawing.Point(226, 338);
+            this.ReceptionistDGV.Name = "ReceptionistDGV";
+            this.ReceptionistDGV.RowHeadersWidth = 51;
+            this.ReceptionistDGV.RowTemplate.Height = 24;
+            this.ReceptionistDGV.Size = new System.Drawing.Size(997, 220);
+            this.ReceptionistDGV.TabIndex = 9;
+            this.ReceptionistDGV.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ReceptionistDGV_CellContentClick);
             // 
             // panel1
             // 
@@ -438,13 +443,13 @@ namespace HospitalManagementSystem
             this.label4.Text = "Pacienti";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // textBox5
+            // RecepPassTb
             // 
-            this.textBox5.Location = new System.Drawing.Point(665, 53);
-            this.textBox5.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(205, 30);
-            this.textBox5.TabIndex = 71;
+            this.RecepPassTb.Location = new System.Drawing.Point(660, 53);
+            this.RecepPassTb.Margin = new System.Windows.Forms.Padding(4);
+            this.RecepPassTb.Name = "RecepPassTb";
+            this.RecepPassTb.Size = new System.Drawing.Size(205, 30);
+            this.RecepPassTb.TabIndex = 3;
             // 
             // Receptionists
             // 
@@ -453,26 +458,27 @@ namespace HospitalManagementSystem
             this.ClientSize = new System.Drawing.Size(1228, 805);
             this.Controls.Add(this.label16);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.RecepNameTb);
             this.Controls.Add(this.label14);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.RecepCovidTb);
+            this.Controls.Add(this.RecepPhoneTb);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.label12);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.RecepAddressTb);
+            this.Controls.Add(this.EditBttn);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.DeleteBttn);
+            this.Controls.Add(this.AddBttn);
+            this.Controls.Add(this.ReceptionistDGV);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.textBox5);
+            this.Controls.Add(this.RecepPassTb);
             this.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Receptionists";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Receptionists";
+            this.Load += new System.EventHandler(this.Receptionists_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
@@ -486,7 +492,7 @@ namespace HospitalManagementSystem
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ReceptionistDGV)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
@@ -502,18 +508,18 @@ namespace HospitalManagementSystem
         private System.Windows.Forms.PictureBox pictureBox7;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox RecepNameTb;
         private System.Windows.Forms.PictureBox pictureBox8;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.ComboBox RecepCovidTb;
+        private System.Windows.Forms.TextBox RecepPhoneTb;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox RecepAddressTb;
         private System.Windows.Forms.PictureBox pictureBox9;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button EditBttn;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label label3;
@@ -524,14 +530,14 @@ namespace HospitalManagementSystem
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button DeleteBttn;
+        private System.Windows.Forms.Button AddBttn;
+        private System.Windows.Forms.DataGridView ReceptionistDGV;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pictureBox6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox RecepPassTb;
     }
 }
