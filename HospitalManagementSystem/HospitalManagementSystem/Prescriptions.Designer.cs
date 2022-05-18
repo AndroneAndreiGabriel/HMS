@@ -73,6 +73,7 @@ namespace HospitalManagementSystem
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
             this.textBox5 = new System.Windows.Forms.TextBox();
+            this.Exit = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
@@ -87,6 +88,7 @@ namespace HospitalManagementSystem
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Exit)).BeginInit();
             this.SuspendLayout();
             // 
             // label8
@@ -473,9 +475,9 @@ namespace HospitalManagementSystem
             // richTextBox1
             // 
             this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.richTextBox1.Location = new System.Drawing.Point(661, 36);
+            this.richTextBox1.Location = new System.Drawing.Point(646, 36);
             this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(544, 176);
+            this.richTextBox1.Size = new System.Drawing.Size(446, 176);
             this.richTextBox1.TabIndex = 80;
             this.richTextBox1.Text = "";
             // 
@@ -483,7 +485,7 @@ namespace HospitalManagementSystem
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(898, 10);
+            this.label11.Location = new System.Drawing.Point(819, 9);
             this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(102, 23);
@@ -519,7 +521,7 @@ namespace HospitalManagementSystem
             this.label16.Location = new System.Drawing.Point(430, 222);
             this.label16.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(61, 29);
+            this.label16.Size = new System.Drawing.Size(49, 23);
             this.label16.TabIndex = 84;
             this.label16.Text = "Cost";
             this.label16.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -532,11 +534,22 @@ namespace HospitalManagementSystem
             this.textBox5.Size = new System.Drawing.Size(205, 30);
             this.textBox5.TabIndex = 85;
             // 
+            // Exit
+            // 
+            this.Exit.Image = ((System.Drawing.Image)(resources.GetObject("Exit.Image")));
+            this.Exit.Location = new System.Drawing.Point(1155, 36);
+            this.Exit.Name = "Exit";
+            this.Exit.Size = new System.Drawing.Size(50, 51);
+            this.Exit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.Exit.TabIndex = 86;
+            this.Exit.TabStop = false;
+            // 
             // Prescriptions
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1228, 805);
+            this.ClientSize = new System.Drawing.Size(1224, 796);
+            this.Controls.Add(this.Exit);
             this.Controls.Add(this.label16);
             this.Controls.Add(this.textBox5);
             this.Controls.Add(this.label13);
@@ -562,7 +575,7 @@ namespace HospitalManagementSystem
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Prescriptions";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -586,6 +599,7 @@ namespace HospitalManagementSystem
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Exit)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -636,5 +650,6 @@ namespace HospitalManagementSystem
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.PictureBox Exit;
     }
 }

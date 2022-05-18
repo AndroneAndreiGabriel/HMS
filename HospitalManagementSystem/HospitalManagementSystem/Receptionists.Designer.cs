@@ -34,14 +34,14 @@ namespace HospitalManagementSystem
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.label16 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.RecepNameTb = new System.Windows.Forms.TextBox();
+            this.RecepName = new System.Windows.Forms.TextBox();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.label14 = new System.Windows.Forms.Label();
-            this.RecepCovidTb = new System.Windows.Forms.ComboBox();
-            this.RecepPhoneTb = new System.Windows.Forms.TextBox();
+            this.RecepCovidTest = new System.Windows.Forms.ComboBox();
+            this.RecepPhone = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            this.RecepAddressTb = new System.Windows.Forms.TextBox();
+            this.RecepAddress = new System.Windows.Forms.TextBox();
             this.pictureBox9 = new System.Windows.Forms.PictureBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -64,7 +64,9 @@ namespace HospitalManagementSystem
             this.label5 = new System.Windows.Forms.Label();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.RecepPassTb = new System.Windows.Forms.TextBox();
+            this.RecepPassword = new System.Windows.Forms.TextBox();
+            this.Exit = new System.Windows.Forms.PictureBox();
+            this.label10 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
@@ -79,6 +81,7 @@ namespace HospitalManagementSystem
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Exit)).BeginInit();
             this.SuspendLayout();
             // 
             // label8
@@ -106,7 +109,7 @@ namespace HospitalManagementSystem
             // 
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(656, 27);
+            this.label16.Location = new System.Drawing.Point(656, 79);
             this.label16.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(65, 23);
@@ -118,7 +121,7 @@ namespace HospitalManagementSystem
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(222, 26);
+            this.label9.Location = new System.Drawing.Point(222, 78);
             this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(163, 23);
@@ -126,13 +129,13 @@ namespace HospitalManagementSystem
             this.label9.Text = "Nume receptionist";
             this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // RecepNameTb
+            // RecepName
             // 
-            this.RecepNameTb.Location = new System.Drawing.Point(226, 53);
-            this.RecepNameTb.Margin = new System.Windows.Forms.Padding(4);
-            this.RecepNameTb.Name = "RecepNameTb";
-            this.RecepNameTb.Size = new System.Drawing.Size(205, 30);
-            this.RecepNameTb.TabIndex = 1;
+            this.RecepName.Location = new System.Drawing.Point(226, 105);
+            this.RecepName.Margin = new System.Windows.Forms.Padding(4);
+            this.RecepName.Name = "RecepName";
+            this.RecepName.Size = new System.Drawing.Size(205, 30);
+            this.RecepName.TabIndex = 1;
             // 
             // pictureBox8
             // 
@@ -148,7 +151,7 @@ namespace HospitalManagementSystem
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(879, 26);
+            this.label14.Location = new System.Drawing.Point(879, 78);
             this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(133, 23);
@@ -156,31 +159,31 @@ namespace HospitalManagementSystem
             this.label14.Text = "Testat COVID";
             this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // RecepCovidTb
+            // RecepCovidTest
             // 
-            this.RecepCovidTb.FormattingEnabled = true;
-            this.RecepCovidTb.ItemHeight = 22;
-            this.RecepCovidTb.Items.AddRange(new object[] {
+            this.RecepCovidTest.FormattingEnabled = true;
+            this.RecepCovidTest.ItemHeight = 22;
+            this.RecepCovidTest.Items.AddRange(new object[] {
             "Pozitiv",
             "Negativ"});
-            this.RecepCovidTb.Location = new System.Drawing.Point(882, 52);
-            this.RecepCovidTb.Name = "RecepCovidTb";
-            this.RecepCovidTb.Size = new System.Drawing.Size(205, 30);
-            this.RecepCovidTb.TabIndex = 4;
+            this.RecepCovidTest.Location = new System.Drawing.Point(882, 104);
+            this.RecepCovidTest.Name = "RecepCovidTest";
+            this.RecepCovidTest.Size = new System.Drawing.Size(205, 30);
+            this.RecepCovidTest.TabIndex = 4;
             // 
-            // RecepPhoneTb
+            // RecepPhone
             // 
-            this.RecepPhoneTb.Location = new System.Drawing.Point(444, 53);
-            this.RecepPhoneTb.Margin = new System.Windows.Forms.Padding(4);
-            this.RecepPhoneTb.Name = "RecepPhoneTb";
-            this.RecepPhoneTb.Size = new System.Drawing.Size(205, 30);
-            this.RecepPhoneTb.TabIndex = 2;
+            this.RecepPhone.Location = new System.Drawing.Point(444, 105);
+            this.RecepPhone.Margin = new System.Windows.Forms.Padding(4);
+            this.RecepPhone.Name = "RecepPhone";
+            this.RecepPhone.Size = new System.Drawing.Size(205, 30);
+            this.RecepPhone.TabIndex = 2;
             // 
             // label13
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(440, 26);
+            this.label13.Location = new System.Drawing.Point(440, 78);
             this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(73, 23);
@@ -192,7 +195,7 @@ namespace HospitalManagementSystem
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(222, 96);
+            this.label12.Location = new System.Drawing.Point(222, 148);
             this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(70, 23);
@@ -200,14 +203,14 @@ namespace HospitalManagementSystem
             this.label12.Text = "Adresa";
             this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // RecepAddressTb
+            // RecepAddress
             // 
-            this.RecepAddressTb.Location = new System.Drawing.Point(226, 123);
-            this.RecepAddressTb.Margin = new System.Windows.Forms.Padding(4);
-            this.RecepAddressTb.Multiline = true;
-            this.RecepAddressTb.Name = "RecepAddressTb";
-            this.RecepAddressTb.Size = new System.Drawing.Size(205, 102);
-            this.RecepAddressTb.TabIndex = 5;
+            this.RecepAddress.Location = new System.Drawing.Point(226, 175);
+            this.RecepAddress.Margin = new System.Windows.Forms.Padding(4);
+            this.RecepAddress.Multiline = true;
+            this.RecepAddress.Name = "RecepAddress";
+            this.RecepAddress.Size = new System.Drawing.Size(205, 102);
+            this.RecepAddress.TabIndex = 5;
             // 
             // pictureBox9
             // 
@@ -244,7 +247,7 @@ namespace HospitalManagementSystem
             // EditBttn
             // 
             this.EditBttn.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.EditBttn.Location = new System.Drawing.Point(604, 269);
+            this.EditBttn.Location = new System.Drawing.Point(604, 321);
             this.EditBttn.Name = "EditBttn";
             this.EditBttn.Size = new System.Drawing.Size(236, 37);
             this.EditBttn.TabIndex = 7;
@@ -258,16 +261,16 @@ namespace HospitalManagementSystem
             this.panel2.Controls.Add(this.panel4);
             this.panel2.Controls.Add(this.panel6);
             this.panel2.Controls.Add(this.panel3);
-            this.panel2.Location = new System.Drawing.Point(208, 564);
+            this.panel2.Location = new System.Drawing.Point(208, 631);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1015, 229);
+            this.panel2.Size = new System.Drawing.Size(1015, 162);
             this.panel2.TabIndex = 65;
             // 
             // panel4
             // 
             this.panel4.Controls.Add(this.label3);
             this.panel4.Controls.Add(this.pictureBox3);
-            this.panel4.Location = new System.Drawing.Point(696, 67);
+            this.panel4.Location = new System.Drawing.Point(696, 34);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(306, 101);
             this.panel4.TabIndex = 2;
@@ -296,7 +299,7 @@ namespace HospitalManagementSystem
             // 
             this.panel6.Controls.Add(this.label2);
             this.panel6.Controls.Add(this.pictureBox5);
-            this.panel6.Location = new System.Drawing.Point(365, 67);
+            this.panel6.Location = new System.Drawing.Point(365, 34);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(306, 101);
             this.panel6.TabIndex = 2;
@@ -325,7 +328,7 @@ namespace HospitalManagementSystem
             // 
             this.panel3.Controls.Add(this.label1);
             this.panel3.Controls.Add(this.pictureBox2);
-            this.panel3.Location = new System.Drawing.Point(28, 67);
+            this.panel3.Location = new System.Drawing.Point(28, 34);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(306, 101);
             this.panel3.TabIndex = 0;
@@ -353,7 +356,7 @@ namespace HospitalManagementSystem
             // DeleteBttn
             // 
             this.DeleteBttn.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DeleteBttn.Location = new System.Drawing.Point(861, 269);
+            this.DeleteBttn.Location = new System.Drawing.Point(861, 321);
             this.DeleteBttn.Name = "DeleteBttn";
             this.DeleteBttn.Size = new System.Drawing.Size(236, 37);
             this.DeleteBttn.TabIndex = 8;
@@ -364,7 +367,7 @@ namespace HospitalManagementSystem
             // AddBttn
             // 
             this.AddBttn.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AddBttn.Location = new System.Drawing.Point(351, 269);
+            this.AddBttn.Location = new System.Drawing.Point(351, 321);
             this.AddBttn.Name = "AddBttn";
             this.AddBttn.Size = new System.Drawing.Size(236, 37);
             this.AddBttn.TabIndex = 6;
@@ -375,7 +378,7 @@ namespace HospitalManagementSystem
             // ReceptionistDGV
             // 
             this.ReceptionistDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.ReceptionistDGV.Location = new System.Drawing.Point(226, 338);
+            this.ReceptionistDGV.Location = new System.Drawing.Point(223, 387);
             this.ReceptionistDGV.Name = "ReceptionistDGV";
             this.ReceptionistDGV.RowHeadersWidth = 51;
             this.ReceptionistDGV.RowTemplate.Height = 24;
@@ -443,37 +446,62 @@ namespace HospitalManagementSystem
             this.label4.Text = "Pacienti";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // RecepPassTb
+            // RecepPassword
             // 
-            this.RecepPassTb.Location = new System.Drawing.Point(660, 53);
-            this.RecepPassTb.Margin = new System.Windows.Forms.Padding(4);
-            this.RecepPassTb.Name = "RecepPassTb";
-            this.RecepPassTb.Size = new System.Drawing.Size(205, 30);
-            this.RecepPassTb.TabIndex = 3;
+            this.RecepPassword.Location = new System.Drawing.Point(660, 105);
+            this.RecepPassword.Margin = new System.Windows.Forms.Padding(4);
+            this.RecepPassword.Name = "RecepPassword";
+            this.RecepPassword.Size = new System.Drawing.Size(205, 30);
+            this.RecepPassword.TabIndex = 3;
+            // 
+            // Exit
+            // 
+            this.Exit.Image = ((System.Drawing.Image)(resources.GetObject("Exit.Image")));
+            this.Exit.Location = new System.Drawing.Point(1160, 12);
+            this.Exit.Name = "Exit";
+            this.Exit.Size = new System.Drawing.Size(50, 51);
+            this.Exit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.Exit.TabIndex = 12;
+            this.Exit.TabStop = false;
+            this.Exit.Click += new System.EventHandler(this.Exit_Click);
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(591, 12);
+            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(235, 32);
+            this.label10.TabIndex = 71;
+            this.label10.Text = "RECEPTIONISTI";
+            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Receptionists
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1228, 805);
+            this.ClientSize = new System.Drawing.Size(1224, 796);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.Exit);
             this.Controls.Add(this.label16);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.RecepNameTb);
+            this.Controls.Add(this.RecepName);
             this.Controls.Add(this.label14);
-            this.Controls.Add(this.RecepCovidTb);
-            this.Controls.Add(this.RecepPhoneTb);
+            this.Controls.Add(this.RecepCovidTest);
+            this.Controls.Add(this.RecepPhone);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.label12);
-            this.Controls.Add(this.RecepAddressTb);
+            this.Controls.Add(this.RecepAddress);
             this.Controls.Add(this.EditBttn);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.DeleteBttn);
             this.Controls.Add(this.AddBttn);
             this.Controls.Add(this.ReceptionistDGV);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.RecepPassTb);
+            this.Controls.Add(this.RecepPassword);
             this.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Receptionists";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -497,6 +525,7 @@ namespace HospitalManagementSystem
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Exit)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -508,14 +537,14 @@ namespace HospitalManagementSystem
         private System.Windows.Forms.PictureBox pictureBox7;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox RecepNameTb;
+        private System.Windows.Forms.TextBox RecepName;
         private System.Windows.Forms.PictureBox pictureBox8;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.ComboBox RecepCovidTb;
-        private System.Windows.Forms.TextBox RecepPhoneTb;
+        private System.Windows.Forms.ComboBox RecepCovidTest;
+        private System.Windows.Forms.TextBox RecepPhone;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TextBox RecepAddressTb;
+        private System.Windows.Forms.TextBox RecepAddress;
         private System.Windows.Forms.PictureBox pictureBox9;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
@@ -538,6 +567,8 @@ namespace HospitalManagementSystem
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox RecepPassTb;
+        private System.Windows.Forms.TextBox RecepPassword;
+        private System.Windows.Forms.PictureBox Exit;
+        private System.Windows.Forms.Label label10;
     }
 }

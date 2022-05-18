@@ -1,34 +1,26 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 
 namespace HospitalManagementSystem
-{    
+{
     public partial class Receptionists : Form
     {
-        int Key = 0;
-
+        private int Key = 0;
+        SqlConnection Con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFileName=C:\Users\Andrei\Documents\HospitalDB.mdf;Integrated Security=True;Connect Timeout=30");
         public Receptionists()
         {
             InitializeComponent();
-            DisplayRec();
+            DisplayRecep();
         }
-
-        SqlConnection Con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFileName=C:\Users\Andrei\Documents\HospitalDB.mdf;Integrated Security=True;Connect Timeout=30");
 
         private void Receptionists_Load(object sender, EventArgs e)
         {
 
         }
 
-        private void DisplayRec()
+        private void DisplayRecep()
         {
             Con.Open();
             string Query = "select * from Receptionists";
@@ -42,7 +34,7 @@ namespace HospitalManagementSystem
 
         private void AddBttn_Click(object sender, EventArgs e)
         {
-            if (RecepNameTb.Text == "" || RecepPhoneTb.Text == "" || RecepAddressTb.Text == "" || RecepPassTb.Text == "" || RecepCovidTb.Text == "")
+            if (RecepName.Text == "" || RecepPhone.Text == "" || RecepAddress.Text == "" || RecepPassword.Text == "" || RecepCovidTest.SelectedIndex == -1)
             {
                 MessageBox.Show("Lipsa informatii");
             }
@@ -51,17 +43,19 @@ namespace HospitalManagementSystem
                 try
                 {
                     Con.Open();
-                    SqlCommand cmd = new SqlCommand("insert into Receptionists(ReceptionistName, ReceptionistPhone, ReceptionistAddress, ReceptionistPassword, ReceptionistCovidTest)"
-                                                                     + "values(@RNM, @RPH, @RAD, @RPS, @RCV)", Con);
-                    cmd.Parameters.AddWithValue("@RNM", RecepNameTb.Text);
-                    cmd.Parameters.AddWithValue("@RPH", RecepPhoneTb.Text);
-                    cmd.Parameters.AddWithValue("@RAD", RecepAddressTb.Text);
-                    cmd.Parameters.AddWithValue("@RPS", RecepPassTb.Text);
-                    cmd.Parameters.AddWithValue("@RCV", RecepCovidTb.Text);
+                    SqlCommand cmd = new SqlCommand("insert into Receptionists(ReceptionistName, ReceptionistPhone, ReceptionistPassword, ReceptionistCovidTest, ReceptionistAddress)"
+                                                                     + "values(@RNM, @RPH, @RPS, @RCV, @RAD)", Con);
+                    cmd.Parameters.AddWithValue("@RNM", RecepName.Text);
+                    cmd.Parameters.AddWithValue("@RPH", RecepPhone.Text);
+                    cmd.Parameters.AddWithValue("@RPS", RecepPassword.Text);
+                    cmd.Parameters.AddWithValue("@RCV", RecepCovidTest.Text);
+                    cmd.Parameters.AddWithValue("@RAD", RecepAddress.Text);
                     cmd.ExecuteNonQuery();
-                    MessageBox.Show("Receptionist adaugat");
                     Con.Close();
-                    DisplayRec();
+
+                    DisplayRecep();
+                    Clear();
+                    MessageBox.Show("Receptionist adaugat");
                 }
                 catch(Exception ex)
                 {
@@ -72,36 +66,31 @@ namespace HospitalManagementSystem
 
         private void EditBttn_Click(object sender, EventArgs e)
         {
-            /*if (RecepNameTb.Text == "" || RecepPhoneTb.Text == "" || RecepAddressTb.Text == "" || RecepPassTb.Text == "" || RecepCovidTb.Text == "")
+            try
             {
-                MessageBox.Show("Lipsa informatii");
+                Con.Open();
+                SqlCommand cmd = new SqlCommand("update Receptionists set ReceptionistName = @RNM," +
+                                                                            "ReceptionistPhone = @RPH," +
+                                                                            "ReceptionistPassword = @RPS," +
+                                                                            "ReceptionistCovidTest = @RCV," +
+                                                                            "ReceptionistAddress = @RAD" +
+                                                                            " where ReceptionistId = @RID", Con);
+                cmd.Parameters.AddWithValue("@RNM", RecepName.Text);
+                cmd.Parameters.AddWithValue("@RPH", RecepPhone.Text);
+                cmd.Parameters.AddWithValue("@RPS", RecepPassword.Text);
+                cmd.Parameters.AddWithValue("@RCV", RecepCovidTest.Text);
+                cmd.Parameters.AddWithValue("@RAD", RecepAddress.Text);
+                cmd.Parameters.AddWithValue("@RID", Key);
+                cmd.ExecuteNonQuery();
+                Con.Close();
+
+                DisplayRecep();
+                Clear();
+                MessageBox.Show("Receptionist actualizat!");
             }
-            else*/
+            catch (Exception ex)
             {
-                try
-                {
-                    Con.Open();
-                    SqlCommand cmd = new SqlCommand("update Receptionists set ReceptionistName = @RNM," +
-                                                                             "ReceptionistPhone = @RPH," +
-                                                                             "ReceptionistAddress = @RAD," +
-                                                                             "ReceptionistPassword = @RPS," +
-                                                                             "ReceptionistCovidTest = @RCV " +
-                                                    "where ReceptionistId=@RID", Con);
-                    cmd.Parameters.AddWithValue("@RNM", RecepNameTb.Text);
-                    cmd.Parameters.AddWithValue("@RPH", RecepPhoneTb.Text);
-                    cmd.Parameters.AddWithValue("@RAD", RecepAddressTb.Text);
-                    cmd.Parameters.AddWithValue("@RPS", RecepPassTb.Text);
-                    cmd.Parameters.AddWithValue("@RCV", RecepCovidTb.Text);
-                    cmd.Parameters.AddWithValue("@RID", Key);
-                    cmd.ExecuteNonQuery();
-                    MessageBox.Show("Receptionist actualizat!");
-                    Con.Close();
-                    DisplayRec();
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
+                MessageBox.Show(ex.Message);
             }
         }
 
@@ -119,9 +108,11 @@ namespace HospitalManagementSystem
                     SqlCommand cmd = new SqlCommand("delete from Receptionists where ReceptionistId=@RID", Con);
                     cmd.Parameters.AddWithValue("@RID", Key);
                     cmd.ExecuteNonQuery();
-                    MessageBox.Show("Receptionist sters!");
                     Con.Close();
-                    DisplayRec();
+
+                    DisplayRecep();
+                    Clear();
+                    MessageBox.Show("Receptionist sters!");
                 }
                 catch (Exception ex)
                 {
@@ -130,28 +121,37 @@ namespace HospitalManagementSystem
             }
         }
 
-        // todo
         private void ReceptionistDGV_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex < 0)
             {
                 return;
             }
-            
-            RecepNameTb.Text = ReceptionistDGV.Rows[e.RowIndex].Cells[1].Value.ToString();
-            RecepPhoneTb.Text = ReceptionistDGV.Rows[e.RowIndex].Cells[2].Value.ToString();
-            RecepAddressTb.Text = ReceptionistDGV.Rows[e.RowIndex].Cells[3].Value.ToString();
-            RecepPassTb.Text = ReceptionistDGV.Rows[e.RowIndex].Cells[4].Value.ToString();
-            RecepCovidTb.Text = ReceptionistDGV.Rows[e.RowIndex].Cells[5].Value.ToString();
-
-            if (RecepNameTb.Text == "")
-            {
-                Key = 0;
-            }
             else
             {
-                Key = Convert.ToInt32(RecepNameTb.Text = ReceptionistDGV.Rows[e.RowIndex].Cells[0].Value.ToString());
+                Key = Convert.ToInt32(ReceptionistDGV.Rows[e.RowIndex].Cells[0].Value);
+
+                RecepName.Text = ReceptionistDGV.Rows[e.RowIndex].Cells[1].Value.ToString();
+                RecepPhone.Text = ReceptionistDGV.Rows[e.RowIndex].Cells[2].Value.ToString();
+                RecepPassword.Text = ReceptionistDGV.Rows[e.RowIndex].Cells[3].Value.ToString();
+                RecepCovidTest.Text = ReceptionistDGV.Rows[e.RowIndex].Cells[4].Value.ToString();
+                RecepAddress.Text = ReceptionistDGV.Rows[e.RowIndex].Cells[5].Value.ToString();
             }
+        }
+
+        private void Clear()
+        {
+            RecepName.Text = "";
+            RecepPhone.Text = "";
+            RecepPassword.Text = "";
+            RecepCovidTest.Text = "";
+            RecepAddress.Text = "";
+            Key = 0;
+        }
+
+        private void Exit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

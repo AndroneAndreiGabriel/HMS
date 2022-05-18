@@ -35,18 +35,20 @@ namespace HospitalManagementSystem
             this.label8 = new System.Windows.Forms.Label();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.TestName = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.TestCost = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.TestsDGV = new System.Windows.Forms.DataGridView();
+            this.AddTest = new System.Windows.Forms.Button();
+            this.DeleteTest = new System.Windows.Forms.Button();
+            this.EditTest = new System.Windows.Forms.Button();
+            this.Exit = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TestsDGV)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Exit)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -96,18 +98,18 @@ namespace HospitalManagementSystem
             this.label6.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(577, 9);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(134, 44);
+            this.label6.Size = new System.Drawing.Size(107, 35);
             this.label6.TabIndex = 7;
             this.label6.Text = "Analize";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // textBox1
+            // TestName
             // 
-            this.textBox1.Location = new System.Drawing.Point(245, 206);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(205, 30);
-            this.textBox1.TabIndex = 45;
+            this.TestName.Location = new System.Drawing.Point(245, 206);
+            this.TestName.Margin = new System.Windows.Forms.Padding(4);
+            this.TestName.Name = "TestName";
+            this.TestName.Size = new System.Drawing.Size(205, 30);
+            this.TestName.TabIndex = 45;
             // 
             // label9
             // 
@@ -121,13 +123,13 @@ namespace HospitalManagementSystem
             this.label9.Text = "Denumire test";
             this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // textBox2
+            // TestCost
             // 
-            this.textBox2.Location = new System.Drawing.Point(485, 206);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(205, 30);
-            this.textBox2.TabIndex = 47;
+            this.TestCost.Location = new System.Drawing.Point(485, 206);
+            this.TestCost.Margin = new System.Windows.Forms.Padding(4);
+            this.TestCost.Name = "TestCost";
+            this.TestCost.Size = new System.Drawing.Size(205, 30);
+            this.TestCost.TabIndex = 47;
             // 
             // label1
             // 
@@ -141,64 +143,80 @@ namespace HospitalManagementSystem
             this.label1.Text = "Pret";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // dataGridView1
+            // TestsDGV
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(225, 386);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(808, 396);
-            this.dataGridView1.TabIndex = 48;
+            this.TestsDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.TestsDGV.Location = new System.Drawing.Point(225, 386);
+            this.TestsDGV.Name = "TestsDGV";
+            this.TestsDGV.RowHeadersWidth = 51;
+            this.TestsDGV.RowTemplate.Height = 24;
+            this.TestsDGV.Size = new System.Drawing.Size(808, 396);
+            this.TestsDGV.TabIndex = 48;
+            this.TestsDGV.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.TestsDGV_CellContentClick);
             // 
-            // button3
+            // AddTest
             // 
-            this.button3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(253, 330);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(236, 37);
-            this.button3.TabIndex = 49;
-            this.button3.Text = "Stergere";
-            this.button3.UseVisualStyleBackColor = true;
+            this.AddTest.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AddTest.Location = new System.Drawing.Point(253, 330);
+            this.AddTest.Name = "AddTest";
+            this.AddTest.Size = new System.Drawing.Size(236, 37);
+            this.AddTest.TabIndex = 49;
+            this.AddTest.Text = "Adaugare";
+            this.AddTest.UseVisualStyleBackColor = true;
+            this.AddTest.Click += new System.EventHandler(this.AddTest_Click);
             // 
-            // button2
+            // DeleteTest
             // 
-            this.button2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(760, 330);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(236, 37);
-            this.button2.TabIndex = 51;
-            this.button2.Text = "Editare";
-            this.button2.UseVisualStyleBackColor = true;
+            this.DeleteTest.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DeleteTest.Location = new System.Drawing.Point(760, 330);
+            this.DeleteTest.Name = "DeleteTest";
+            this.DeleteTest.Size = new System.Drawing.Size(236, 37);
+            this.DeleteTest.TabIndex = 51;
+            this.DeleteTest.Text = "Stergere";
+            this.DeleteTest.UseVisualStyleBackColor = true;
+            this.DeleteTest.Click += new System.EventHandler(this.DeleteTest_Click);
             // 
-            // button1
+            // EditTest
             // 
-            this.button1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(507, 330);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(236, 37);
-            this.button1.TabIndex = 50;
-            this.button1.Text = "Adaugare";
-            this.button1.UseVisualStyleBackColor = true;
+            this.EditTest.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.EditTest.Location = new System.Drawing.Point(505, 330);
+            this.EditTest.Name = "EditTest";
+            this.EditTest.Size = new System.Drawing.Size(236, 37);
+            this.EditTest.TabIndex = 50;
+            this.EditTest.Text = "Editare";
+            this.EditTest.UseVisualStyleBackColor = true;
+            this.EditTest.Click += new System.EventHandler(this.EditTest_Click);
+            // 
+            // Exit
+            // 
+            this.Exit.Image = ((System.Drawing.Image)(resources.GetObject("Exit.Image")));
+            this.Exit.Location = new System.Drawing.Point(1166, 12);
+            this.Exit.Name = "Exit";
+            this.Exit.Size = new System.Drawing.Size(50, 51);
+            this.Exit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.Exit.TabIndex = 52;
+            this.Exit.TabStop = false;
+            this.Exit.Click += new System.EventHandler(this.Exit_Click);
             // 
             // LabTests
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1228, 805);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.textBox2);
+            this.ClientSize = new System.Drawing.Size(1224, 796);
+            this.Controls.Add(this.Exit);
+            this.Controls.Add(this.DeleteTest);
+            this.Controls.Add(this.EditTest);
+            this.Controls.Add(this.AddTest);
+            this.Controls.Add(this.TestsDGV);
+            this.Controls.Add(this.TestCost);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.TestName);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pictureBox7);
             this.Controls.Add(this.label6);
             this.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "LabTests";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -207,7 +225,8 @@ namespace HospitalManagementSystem
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TestsDGV)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Exit)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -220,13 +239,14 @@ namespace HospitalManagementSystem
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.PictureBox pictureBox7;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox TestName;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox TestCost;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.DataGridView TestsDGV;
+        private System.Windows.Forms.Button AddTest;
+        private System.Windows.Forms.Button DeleteTest;
+        private System.Windows.Forms.Button EditTest;
+        private System.Windows.Forms.PictureBox Exit;
     }
 }
