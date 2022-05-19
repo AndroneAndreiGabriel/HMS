@@ -33,14 +33,14 @@ namespace HospitalManagementSystem
             this.label8 = new System.Windows.Forms.Label();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.DoctorId = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.DoctorName = new System.Windows.Forms.TextBox();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.pictureBox9 = new System.Windows.Forms.PictureBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
+            this.EditPrescrip = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
@@ -51,29 +51,32 @@ namespace HospitalManagementSystem
             this.panel3 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.DeletePrescrip = new System.Windows.Forms.Button();
+            this.AddPrescrip = new System.Windows.Forms.Button();
+            this.PrescripDGV = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.label5 = new System.Windows.Forms.Label();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.PatientId = new System.Windows.Forms.ComboBox();
             this.label14 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.TestId = new System.Windows.Forms.ComboBox();
             this.label12 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.PatientName = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.TestName = new System.Windows.Forms.TextBox();
+            this.PrescriptionTxt = new System.Windows.Forms.RichTextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.Medicines = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.Cost = new System.Windows.Forms.TextBox();
             this.Exit = new System.Windows.Forms.PictureBox();
+            this.PrintPrescrip = new System.Windows.Forms.Button();
+            this.printDocument1 = new System.Drawing.Printing.PrintDocument();
+            this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
@@ -84,7 +87,7 @@ namespace HospitalManagementSystem
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PrescripDGV)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
@@ -124,13 +127,14 @@ namespace HospitalManagementSystem
             this.label10.Text = "ID Doctor";
             this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // comboBox1
+            // DoctorId
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(220, 36);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(205, 30);
-            this.comboBox1.TabIndex = 52;
+            this.DoctorId.FormattingEnabled = true;
+            this.DoctorId.Location = new System.Drawing.Point(220, 36);
+            this.DoctorId.Name = "DoctorId";
+            this.DoctorId.Size = new System.Drawing.Size(205, 30);
+            this.DoctorId.TabIndex = 1;
+            this.DoctorId.SelectionChangeCommitted += new System.EventHandler(this.DoctorId_SelectionChangeCommitted);
             // 
             // label9
             // 
@@ -144,13 +148,15 @@ namespace HospitalManagementSystem
             this.label9.Text = "Nume doctor";
             this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // textBox1
+            // DoctorName
             // 
-            this.textBox1.Location = new System.Drawing.Point(434, 36);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(205, 30);
-            this.textBox1.TabIndex = 51;
+            this.DoctorName.Enabled = false;
+            this.DoctorName.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DoctorName.Location = new System.Drawing.Point(434, 36);
+            this.DoctorName.Margin = new System.Windows.Forms.Padding(4);
+            this.DoctorName.Name = "DoctorName";
+            this.DoctorName.Size = new System.Drawing.Size(205, 30);
+            this.DoctorName.TabIndex = 2;
             // 
             // pictureBox8
             // 
@@ -194,15 +200,16 @@ namespace HospitalManagementSystem
             this.label6.Text = "Analize";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // button2
+            // EditPrescrip
             // 
-            this.button2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(599, 332);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(236, 37);
-            this.button2.TabIndex = 68;
-            this.button2.Text = "Editare prescriptie";
-            this.button2.UseVisualStyleBackColor = true;
+            this.EditPrescrip.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.EditPrescrip.Location = new System.Drawing.Point(599, 332);
+            this.EditPrescrip.Name = "EditPrescrip";
+            this.EditPrescrip.Size = new System.Drawing.Size(236, 37);
+            this.EditPrescrip.TabIndex = 11;
+            this.EditPrescrip.Text = "Editare prescriptie";
+            this.EditPrescrip.UseVisualStyleBackColor = true;
+            this.EditPrescrip.Click += new System.EventHandler(this.EditPrescrip_Click);
             // 
             // panel2
             // 
@@ -302,35 +309,38 @@ namespace HospitalManagementSystem
             this.pictureBox2.TabIndex = 0;
             this.pictureBox2.TabStop = false;
             // 
-            // button3
+            // DeletePrescrip
             // 
-            this.button3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(856, 332);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(236, 37);
-            this.button3.TabIndex = 69;
-            this.button3.Text = "Stergere prescriptie";
-            this.button3.UseVisualStyleBackColor = true;
+            this.DeletePrescrip.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DeletePrescrip.Location = new System.Drawing.Point(856, 332);
+            this.DeletePrescrip.Name = "DeletePrescrip";
+            this.DeletePrescrip.Size = new System.Drawing.Size(236, 37);
+            this.DeletePrescrip.TabIndex = 12;
+            this.DeletePrescrip.Text = "Stergere prescriptie";
+            this.DeletePrescrip.UseVisualStyleBackColor = true;
+            this.DeletePrescrip.Click += new System.EventHandler(this.DeletePrescrip_Click);
             // 
-            // button1
+            // AddPrescrip
             // 
-            this.button1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(346, 332);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(236, 37);
-            this.button1.TabIndex = 67;
-            this.button1.Text = "Adaugare prescriptie";
-            this.button1.UseVisualStyleBackColor = true;
+            this.AddPrescrip.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AddPrescrip.Location = new System.Drawing.Point(346, 332);
+            this.AddPrescrip.Name = "AddPrescrip";
+            this.AddPrescrip.Size = new System.Drawing.Size(236, 37);
+            this.AddPrescrip.TabIndex = 10;
+            this.AddPrescrip.Text = "Adaugare prescriptie";
+            this.AddPrescrip.UseVisualStyleBackColor = true;
+            this.AddPrescrip.Click += new System.EventHandler(this.AddPrescrip_Click);
             // 
-            // dataGridView1
+            // PrescripDGV
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(221, 377);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(997, 234);
-            this.dataGridView1.TabIndex = 66;
+            this.PrescripDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.PrescripDGV.Location = new System.Drawing.Point(221, 377);
+            this.PrescripDGV.Name = "PrescripDGV";
+            this.PrescripDGV.RowHeadersWidth = 51;
+            this.PrescripDGV.RowTemplate.Height = 24;
+            this.PrescripDGV.Size = new System.Drawing.Size(997, 234);
+            this.PrescripDGV.TabIndex = 13;
+            this.PrescripDGV.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.PrescripDGV_CellContentClick);
             // 
             // panel1
             // 
@@ -404,13 +414,14 @@ namespace HospitalManagementSystem
             this.label17.Text = "ID Pacient";
             this.label17.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // comboBox3
+            // PatientId
             // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(220, 111);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(205, 30);
-            this.comboBox3.TabIndex = 72;
+            this.PatientId.FormattingEnabled = true;
+            this.PatientId.Location = new System.Drawing.Point(220, 111);
+            this.PatientId.Name = "PatientId";
+            this.PatientId.Size = new System.Drawing.Size(205, 30);
+            this.PatientId.TabIndex = 3;
+            this.PatientId.SelectionChangeCommitted += new System.EventHandler(this.PatientId_SelectionChangeCommitted);
             // 
             // label14
             // 
@@ -424,13 +435,14 @@ namespace HospitalManagementSystem
             this.label14.Text = "ID Test laborator";
             this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // comboBox2
+            // TestId
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(220, 182);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(205, 30);
-            this.comboBox2.TabIndex = 74;
+            this.TestId.FormattingEnabled = true;
+            this.TestId.Location = new System.Drawing.Point(220, 182);
+            this.TestId.Name = "TestId";
+            this.TestId.Size = new System.Drawing.Size(205, 30);
+            this.TestId.TabIndex = 5;
+            this.TestId.SelectionChangeCommitted += new System.EventHandler(this.TestId_SelectionChangeCommitted);
             // 
             // label12
             // 
@@ -444,13 +456,15 @@ namespace HospitalManagementSystem
             this.label12.Text = "Nume pacient";
             this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // textBox2
+            // PatientName
             // 
-            this.textBox2.Location = new System.Drawing.Point(434, 111);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(205, 30);
-            this.textBox2.TabIndex = 77;
+            this.PatientName.Enabled = false;
+            this.PatientName.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PatientName.Location = new System.Drawing.Point(434, 111);
+            this.PatientName.Margin = new System.Windows.Forms.Padding(4);
+            this.PatientName.Name = "PatientName";
+            this.PatientName.Size = new System.Drawing.Size(205, 30);
+            this.PatientName.TabIndex = 4;
             // 
             // label15
             // 
@@ -464,22 +478,24 @@ namespace HospitalManagementSystem
             this.label15.Text = "Test";
             this.label15.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // textBox4
+            // TestName
             // 
-            this.textBox4.Location = new System.Drawing.Point(434, 182);
-            this.textBox4.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(205, 30);
-            this.textBox4.TabIndex = 79;
+            this.TestName.Enabled = false;
+            this.TestName.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TestName.Location = new System.Drawing.Point(434, 182);
+            this.TestName.Margin = new System.Windows.Forms.Padding(4);
+            this.TestName.Name = "TestName";
+            this.TestName.Size = new System.Drawing.Size(205, 30);
+            this.TestName.TabIndex = 6;
             // 
-            // richTextBox1
+            // PrescriptionTxt
             // 
-            this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.richTextBox1.Location = new System.Drawing.Point(646, 36);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(446, 176);
-            this.richTextBox1.TabIndex = 80;
-            this.richTextBox1.Text = "";
+            this.PrescriptionTxt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.PrescriptionTxt.Location = new System.Drawing.Point(646, 36);
+            this.PrescriptionTxt.Name = "PrescriptionTxt";
+            this.PrescriptionTxt.Size = new System.Drawing.Size(446, 209);
+            this.PrescriptionTxt.TabIndex = 9;
+            this.PrescriptionTxt.Text = "";
             // 
             // label11
             // 
@@ -505,14 +521,14 @@ namespace HospitalManagementSystem
             this.label13.Text = "Medicamente";
             this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // textBox3
+            // Medicines
             // 
-            this.textBox3.Location = new System.Drawing.Point(221, 249);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox3.Multiline = true;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(205, 69);
-            this.textBox3.TabIndex = 83;
+            this.Medicines.Location = new System.Drawing.Point(221, 249);
+            this.Medicines.Margin = new System.Windows.Forms.Padding(4);
+            this.Medicines.Multiline = true;
+            this.Medicines.Name = "Medicines";
+            this.Medicines.Size = new System.Drawing.Size(205, 69);
+            this.Medicines.TabIndex = 7;
             // 
             // label16
             // 
@@ -526,13 +542,15 @@ namespace HospitalManagementSystem
             this.label16.Text = "Cost";
             this.label16.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // textBox5
+            // Cost
             // 
-            this.textBox5.Location = new System.Drawing.Point(434, 249);
-            this.textBox5.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(205, 30);
-            this.textBox5.TabIndex = 85;
+            this.Cost.Enabled = false;
+            this.Cost.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Cost.Location = new System.Drawing.Point(434, 249);
+            this.Cost.Margin = new System.Windows.Forms.Padding(4);
+            this.Cost.Name = "Cost";
+            this.Cost.Size = new System.Drawing.Size(205, 30);
+            this.Cost.TabIndex = 8;
             // 
             // Exit
             // 
@@ -543,36 +561,64 @@ namespace HospitalManagementSystem
             this.Exit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.Exit.TabIndex = 86;
             this.Exit.TabStop = false;
+            this.Exit.Click += new System.EventHandler(this.Exit_Click);
+            // 
+            // PrintPrescrip
+            // 
+            this.PrintPrescrip.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PrintPrescrip.Location = new System.Drawing.Point(760, 251);
+            this.PrintPrescrip.Name = "PrintPrescrip";
+            this.PrintPrescrip.Size = new System.Drawing.Size(236, 37);
+            this.PrintPrescrip.TabIndex = 87;
+            this.PrintPrescrip.Text = "Printare prescriptie";
+            this.PrintPrescrip.UseVisualStyleBackColor = true;
+            this.PrintPrescrip.Click += new System.EventHandler(this.PrintPrescrip_Click);
+            // 
+            // printDocument1
+            // 
+            this.printDocument1.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument1_PrintPage);
+            // 
+            // printPreviewDialog1
+            // 
+            this.printPreviewDialog1.AutoScrollMargin = new System.Drawing.Size(0, 0);
+            this.printPreviewDialog1.AutoScrollMinSize = new System.Drawing.Size(0, 0);
+            this.printPreviewDialog1.ClientSize = new System.Drawing.Size(400, 300);
+            this.printPreviewDialog1.Document = this.printDocument1;
+            this.printPreviewDialog1.Enabled = true;
+            this.printPreviewDialog1.Icon = ((System.Drawing.Icon)(resources.GetObject("printPreviewDialog1.Icon")));
+            this.printPreviewDialog1.Name = "printPreviewDialog1";
+            this.printPreviewDialog1.Visible = false;
             // 
             // Prescriptions
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1224, 796);
+            this.Controls.Add(this.PrintPrescrip);
             this.Controls.Add(this.Exit);
             this.Controls.Add(this.label16);
-            this.Controls.Add(this.textBox5);
+            this.Controls.Add(this.Cost);
             this.Controls.Add(this.label13);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.Medicines);
             this.Controls.Add(this.label11);
-            this.Controls.Add(this.richTextBox1);
+            this.Controls.Add(this.PrescriptionTxt);
             this.Controls.Add(this.label15);
-            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.TestName);
             this.Controls.Add(this.label12);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.PatientName);
             this.Controls.Add(this.label14);
-            this.Controls.Add(this.comboBox2);
+            this.Controls.Add(this.TestId);
             this.Controls.Add(this.label17);
-            this.Controls.Add(this.comboBox3);
+            this.Controls.Add(this.PatientId);
             this.Controls.Add(this.label10);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.DoctorId);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.DoctorName);
+            this.Controls.Add(this.EditPrescrip);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.DeletePrescrip);
+            this.Controls.Add(this.AddPrescrip);
+            this.Controls.Add(this.PrescripDGV);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -594,7 +640,7 @@ namespace HospitalManagementSystem
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PrescripDGV)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
@@ -610,14 +656,14 @@ namespace HospitalManagementSystem
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.PictureBox pictureBox7;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox DoctorId;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox DoctorName;
         private System.Windows.Forms.PictureBox pictureBox8;
         private System.Windows.Forms.PictureBox pictureBox9;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button EditPrescrip;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label label3;
@@ -628,28 +674,31 @@ namespace HospitalManagementSystem
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button DeletePrescrip;
+        private System.Windows.Forms.Button AddPrescrip;
+        private System.Windows.Forms.DataGridView PrescripDGV;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pictureBox6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.ComboBox PatientId;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox TestId;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox PatientName;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.TextBox TestName;
+        private System.Windows.Forms.RichTextBox PrescriptionTxt;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox Medicines;
         private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox Cost;
         private System.Windows.Forms.PictureBox Exit;
+        private System.Windows.Forms.Button PrintPrescrip;
+        private System.Drawing.Printing.PrintDocument printDocument1;
+        private System.Windows.Forms.PrintPreviewDialog printPreviewDialog1;
     }
 }

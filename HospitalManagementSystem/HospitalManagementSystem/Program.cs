@@ -16,7 +16,7 @@ namespace HospitalManagementSystem
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new LabTests());
+            Application.Run(new Prescriptions());
         }
     }
 }
