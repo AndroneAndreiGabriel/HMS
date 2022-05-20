@@ -153,5 +153,12 @@ namespace HospitalManagementSystem
         {
             Application.Exit();
         }
+
+        private void ReturnHome_Click(object sender, EventArgs e)
+        {
+            Homes obj = new Homes();
+            obj.Show();
+            this.Hide();
+        }
     }
 }

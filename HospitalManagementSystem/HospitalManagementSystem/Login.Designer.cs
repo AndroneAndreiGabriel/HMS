@@ -33,13 +33,13 @@ namespace HospitalManagementSystem
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.UserType = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.Username = new System.Windows.Forms.TextBox();
+            this.Password = new System.Windows.Forms.TextBox();
+            this.Authentication = new System.Windows.Forms.Button();
+            this.Reset = new System.Windows.Forms.Button();
             this.Exit = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Exit)).BeginInit();
@@ -75,18 +75,17 @@ namespace HospitalManagementSystem
             this.label2.Text = "ID Utilizator";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // comboBox1
+            // UserType
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.UserType.FormattingEnabled = true;
+            this.UserType.Items.AddRange(new object[] {
             "Administrator",
             "Doctor",
             "Receptionist"});
-            this.comboBox1.Location = new System.Drawing.Point(215, 169);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(205, 30);
-            this.comboBox1.TabIndex = 3;
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            this.UserType.Location = new System.Drawing.Point(215, 169);
+            this.UserType.Name = "UserType";
+            this.UserType.Size = new System.Drawing.Size(205, 30);
+            this.UserType.TabIndex = 3;
             // 
             // label3
             // 
@@ -110,64 +109,67 @@ namespace HospitalManagementSystem
             this.label4.Text = "Tip utilizator";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // textBox1
+            // Username
             // 
-            this.textBox1.Location = new System.Drawing.Point(215, 230);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(205, 30);
-            this.textBox1.TabIndex = 6;
+            this.Username.Location = new System.Drawing.Point(215, 230);
+            this.Username.Name = "Username";
+            this.Username.Size = new System.Drawing.Size(205, 30);
+            this.Username.TabIndex = 6;
             // 
-            // textBox2
+            // Password
             // 
-            this.textBox2.Location = new System.Drawing.Point(215, 290);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(205, 30);
-            this.textBox2.TabIndex = 7;
+            this.Password.Location = new System.Drawing.Point(215, 290);
+            this.Password.Name = "Password";
+            this.Password.PasswordChar = '*';
+            this.Password.Size = new System.Drawing.Size(205, 30);
+            this.Password.TabIndex = 7;
             // 
-            // button1
+            // Authentication
             // 
-            this.button1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(130, 374);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(236, 37);
-            this.button1.TabIndex = 8;
-            this.button1.Text = "Autentificare";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.Authentication.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Authentication.Location = new System.Drawing.Point(130, 374);
+            this.Authentication.Name = "Authentication";
+            this.Authentication.Size = new System.Drawing.Size(236, 37);
+            this.Authentication.TabIndex = 8;
+            this.Authentication.Text = "Autentificare";
+            this.Authentication.UseVisualStyleBackColor = true;
+            this.Authentication.Click += new System.EventHandler(this.Authentication_Click);
             // 
-            // button2
+            // Reset
             // 
-            this.button2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(130, 417);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(236, 37);
-            this.button2.TabIndex = 9;
-            this.button2.Text = "Resetare";
-            this.button2.UseVisualStyleBackColor = true;
+            this.Reset.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Reset.Location = new System.Drawing.Point(130, 417);
+            this.Reset.Name = "Reset";
+            this.Reset.Size = new System.Drawing.Size(236, 37);
+            this.Reset.TabIndex = 9;
+            this.Reset.Text = "Resetare";
+            this.Reset.UseVisualStyleBackColor = true;
+            this.Reset.Click += new System.EventHandler(this.Reset_Click);
             // 
             // Exit
             // 
             this.Exit.Image = ((System.Drawing.Image)(resources.GetObject("Exit.Image")));
-            this.Exit.Location = new System.Drawing.Point(224, 462);
+            this.Exit.Location = new System.Drawing.Point(224, 469);
             this.Exit.Name = "Exit";
             this.Exit.Size = new System.Drawing.Size(50, 51);
             this.Exit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.Exit.TabIndex = 13;
             this.Exit.TabStop = false;
+            this.Exit.Click += new System.EventHandler(this.Exit_Click);
             // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(501, 525);
+            this.ClientSize = new System.Drawing.Size(496, 541);
             this.Controls.Add(this.Exit);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.Reset);
+            this.Controls.Add(this.Authentication);
+            this.Controls.Add(this.Password);
+            this.Controls.Add(this.Username);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.UserType);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -189,13 +191,13 @@ namespace HospitalManagementSystem
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox UserType;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.TextBox Username;
+        private System.Windows.Forms.TextBox Password;
+        private System.Windows.Forms.Button Authentication;
+        private System.Windows.Forms.Button Reset;
         private System.Windows.Forms.PictureBox Exit;
     }
 }

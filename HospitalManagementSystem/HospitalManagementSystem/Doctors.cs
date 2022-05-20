@@ -14,12 +14,35 @@ namespace HospitalManagementSystem
         {
             InitializeComponent();
             DisplayDoctors();
+
+            CountPatients();
+            CountTests();
         }
         private void Doctors_Load(object sender, EventArgs e)
         {
 
         }
-        
+
+        private void CountPatients()
+        {
+            Con.Open();
+            SqlDataAdapter sda = new SqlDataAdapter("select count(*) from Patients", Con);
+            DataTable dt = new DataTable();
+            sda.Fill(dt);
+            PatientsNumber.Text = dt.Rows[0][0].ToString() + " pacienti";
+            Con.Close();
+        }
+
+        private void CountTests()
+        {
+            Con.Open();
+            SqlDataAdapter sda = new SqlDataAdapter("select count(*) from Tests", Con);
+            DataTable dt = new DataTable();
+            sda.Fill(dt);
+            TestsNumber.Text = dt.Rows[0][0].ToString() + " teste";
+            Con.Close();
+        }
+
         private void AddDoctor_Click(object sender, EventArgs e)
         {
             if (DoctorName.Text == "" ||
@@ -174,6 +197,13 @@ namespace HospitalManagementSystem
         private void Exit_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void ReturnHome_Click(object sender, EventArgs e)
+        {
+            Homes obj = new Homes();
+            obj.Show();
+            this.Hide();
         }
     }
 }
