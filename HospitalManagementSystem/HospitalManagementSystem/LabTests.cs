@@ -8,7 +8,6 @@ namespace HospitalManagementSystem
     public partial class LabTests : Form
     {
         private int Key = 0;
-        SqlConnection Con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFileName=C:\Users\Andrei\Documents\HospitalDB.mdf;Integrated Security=True;Connect Timeout=30");
 
         public LabTests()
         {
@@ -18,14 +17,15 @@ namespace HospitalManagementSystem
 
         private void DisplayTests()
         {
-            Con.Open();
-            string Query = "select * from Tests";
-            SqlDataAdapter sda = new SqlDataAdapter(Query, Con);
-            SqlCommandBuilder builder = new SqlCommandBuilder(sda);
-            var ds = new DataSet();
-            sda.Fill(ds);
-            TestsDGV.DataSource = ds.Tables[0];
-            Con.Close();
+            using (var connection = Program.CreateOpenConnection())
+            {
+                string Query = "select * from Tests";
+                SqlDataAdapter sda = new SqlDataAdapter(Query, connection);
+                SqlCommandBuilder builder = new SqlCommandBuilder(sda);
+                var ds = new DataSet();
+                sda.Fill(ds);
+                TestsDGV.DataSource = ds.Tables[0];
+            }
         }
 
         private void Clear()
@@ -66,12 +66,13 @@ namespace HospitalManagementSystem
             {
                 try
                 {
-                    Con.Open();
-                    SqlCommand cmd = new SqlCommand("insert into Tests(TestName, TestCost) values(@TNM, @TPR)", Con);
-                    cmd.Parameters.AddWithValue("@TNM", TestName.Text);
-                    cmd.Parameters.AddWithValue("@TPR", TestCost.Text);
-                    cmd.ExecuteNonQuery();
-                    Con.Close();
+                    using (var connection = Program.CreateOpenConnection())
+                    {
+                        SqlCommand cmd = new SqlCommand("insert into Tests(TestName, TestCost) values(@TNM, @TPR)", connection);
+                        cmd.Parameters.AddWithValue("@TNM", TestName.Text);
+                        cmd.Parameters.AddWithValue("@TPR", TestCost.Text);
+                        cmd.ExecuteNonQuery();
+                    }
 
                     DisplayTests();
                     Clear();
@@ -88,13 +89,14 @@ namespace HospitalManagementSystem
         {
             try
             {
-                Con.Open();
-                SqlCommand cmd = new SqlCommand("update Tests set TestName = @TNM, TestCost = @TPR where TestId = @TID", Con);
-                cmd.Parameters.AddWithValue("@TNM", TestName.Text);
-                cmd.Parameters.AddWithValue("@TPR", TestCost.Text);
-                cmd.Parameters.AddWithValue("@TID", Key);
-                cmd.ExecuteNonQuery();
-                Con.Close();
+                using (var connection = Program.CreateOpenConnection())
+                {
+                    SqlCommand cmd = new SqlCommand("update Tests set TestName = @TNM, TestCost = @TPR where TestId = @TID", connection);
+                    cmd.Parameters.AddWithValue("@TNM", TestName.Text);
+                    cmd.Parameters.AddWithValue("@TPR", TestCost.Text);
+                    cmd.Parameters.AddWithValue("@TID", Key);
+                    cmd.ExecuteNonQuery();
+                }
 
                 DisplayTests();
                 Clear();
@@ -116,11 +118,12 @@ namespace HospitalManagementSystem
             {
                 try
                 {
-                    Con.Open();
-                    SqlCommand cmd = new SqlCommand("delete from Tests where TestId=@TID", Con);
-                    cmd.Parameters.AddWithValue("@TID", Key);
-                    cmd.ExecuteNonQuery();
-                    Con.Close();
+                    using (var connection = Program.CreateOpenConnection())
+                    {
+                        SqlCommand cmd = new SqlCommand("delete from Tests where TestId=@TID", connection);
+                        cmd.Parameters.AddWithValue("@TID", Key);
+                        cmd.ExecuteNonQuery();
+                    }
 
                     DisplayTests();
                     Clear();
@@ -134,6 +137,13 @@ namespace HospitalManagementSystem
         }
 
         private void ReturnHome_Click(object sender, EventArgs e)
+        {
+            Homes obj = new Homes();
+            obj.Show();
+            this.Hide();
+        }
+
+        private void pictureBox9_Click(object sender, EventArgs e)
         {
             Homes obj = new Homes();
             obj.Show();

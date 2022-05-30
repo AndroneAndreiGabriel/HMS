@@ -84,6 +84,7 @@ namespace HospitalManagementSystem
             this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox9.TabIndex = 10;
             this.pictureBox9.TabStop = false;
+            this.pictureBox9.Click += new System.EventHandler(this.pictureBox9_Click);
             // 
             // EditDoctor
             // 
@@ -178,19 +179,19 @@ namespace HospitalManagementSystem
             // DoctorsDGV
             // 
             this.DoctorsDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DoctorsDGV.Location = new System.Drawing.Point(213, 334);
+            this.DoctorsDGV.Location = new System.Drawing.Point(206, 334);
             this.DoctorsDGV.Name = "DoctorsDGV";
             this.DoctorsDGV.RowHeadersWidth = 51;
             this.DoctorsDGV.RowTemplate.Height = 24;
-            this.DoctorsDGV.Size = new System.Drawing.Size(1008, 220);
+            this.DoctorsDGV.Size = new System.Drawing.Size(1015, 228);
             this.DoctorsDGV.TabIndex = 12;
-            this.DoctorsDGV.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DoctorsDGV_CellContentClick);
+            this.DoctorsDGV.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DoctorsDGV_CellClick);
             // 
             // ReturnHome
             // 
             this.ReturnHome.AutoSize = true;
             this.ReturnHome.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ReturnHome.Location = new System.Drawing.Point(83, 732);
+            this.ReturnHome.Location = new System.Drawing.Point(83, 729);
             this.ReturnHome.Name = "ReturnHome";
             this.ReturnHome.Size = new System.Drawing.Size(61, 23);
             this.ReturnHome.TabIndex = 11;

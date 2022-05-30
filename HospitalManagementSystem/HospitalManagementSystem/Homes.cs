@@ -13,8 +13,6 @@ namespace HospitalManagementSystem
 {
     public partial class Homes : Form
     {
-        SqlConnection Con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFileName=C:\Users\Andrei\Documents\HospitalDB.mdf;Integrated Security=True;Connect Timeout=30");
-
         public Homes()
         {
             InitializeComponent();
@@ -65,31 +63,34 @@ namespace HospitalManagementSystem
 
         private void CountPatients()
         {
-            Con.Open();
-            SqlDataAdapter sda = new SqlDataAdapter("select count(*) from Patients", Con);
-            DataTable dt = new DataTable();
-            sda.Fill(dt);
-            PatientsNumber.Text = dt.Rows[0][0].ToString() + " pacienti";
-            Con.Close();
+            using (var connection = Program.CreateOpenConnection())
+            {
+                SqlDataAdapter sda = new SqlDataAdapter("select count(*) from Patients", connection);
+                DataTable dt = new DataTable();
+                sda.Fill(dt);
+                PatientsNumber.Text = dt.Rows[0][0].ToString() + " pacienti";
+            }
         }
 
         private void CountDoctors()
         {
-            Con.Open();
-            SqlDataAdapter sda = new SqlDataAdapter("select count(*) from Doctors", Con);
-            DataTable dt = new DataTable();
-            sda.Fill(dt);
-            DoctorsNumber.Text = dt.Rows[0][0].ToString() + " doctori";
-            Con.Close();
+            using (var connection = Program.CreateOpenConnection())
+            {
+                SqlDataAdapter sda = new SqlDataAdapter("select count(*) from Doctors", connection);
+                DataTable dt = new DataTable();
+                sda.Fill(dt);
+                DoctorsNumber.Text = dt.Rows[0][0].ToString() + " doctori";
+            }
         }
         private void CountTests()
         {
-            Con.Open();
-            SqlDataAdapter sda = new SqlDataAdapter("select count(*) from Tests", Con);
-            DataTable dt = new DataTable();
-            sda.Fill(dt);
-            TestsNumber.Text = dt.Rows[0][0].ToString() + " teste";
-            Con.Close();
+            using (var connection = Program.CreateOpenConnection())
+            {
+                SqlDataAdapter sda = new SqlDataAdapter("select count(*) from Tests", connection);
+                DataTable dt = new DataTable();
+                sda.Fill(dt);
+                TestsNumber.Text = dt.Rows[0][0].ToString() + " teste";
+            }
         }
 
         private void ReceptionistsLbl_Click(object sender, EventArgs e)
@@ -102,6 +103,41 @@ namespace HospitalManagementSystem
         private void PrescripLbl_Click(object sender, EventArgs e)
         {
             Prescriptions obj = new Prescriptions();
+            obj.Show();
+            this.Hide();
+        }
+
+        private void recepImg_Click(object sender, EventArgs e)
+        {
+            Receptionists obj = new Receptionists();
+            obj.Show();
+            this.Hide();
+        }
+
+        private void testsImg_Click(object sender, EventArgs e)
+        {
+            LabTests obj = new LabTests();
+            obj.Show();
+            this.Hide();
+        }
+
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+            Prescriptions obj = new Prescriptions();
+            obj.Show();
+            this.Hide();
+        }
+
+        private void imageDoctor_Click(object sender, EventArgs e)
+        {
+            Doctors obj = new Doctors();
+            obj.Show();
+            this.Hide();
+        }
+
+        private void patientsImg_Click(object sender, EventArgs e)
+        {
+            Patients obj = new Patients();
             obj.Show();
             this.Hide();
         }

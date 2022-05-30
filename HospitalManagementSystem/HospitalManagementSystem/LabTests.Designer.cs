@@ -93,12 +93,13 @@ namespace HospitalManagementSystem
             this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox9.TabIndex = 10;
             this.pictureBox9.TabStop = false;
+            this.pictureBox9.Click += new System.EventHandler(this.pictureBox9_Click);
             // 
             // ReturnHome
             // 
             this.ReturnHome.AutoSize = true;
             this.ReturnHome.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ReturnHome.Location = new System.Drawing.Point(83, 732);
+            this.ReturnHome.Location = new System.Drawing.Point(83, 729);
             this.ReturnHome.Name = "ReturnHome";
             this.ReturnHome.Size = new System.Drawing.Size(61, 23);
             this.ReturnHome.TabIndex = 11;
@@ -108,7 +109,7 @@ namespace HospitalManagementSystem
             // 
             // TestName
             // 
-            this.TestName.Location = new System.Drawing.Point(245, 206);
+            this.TestName.Location = new System.Drawing.Point(329, 206);
             this.TestName.Margin = new System.Windows.Forms.Padding(4);
             this.TestName.Name = "TestName";
             this.TestName.Size = new System.Drawing.Size(205, 30);
@@ -118,7 +119,7 @@ namespace HospitalManagementSystem
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(241, 179);
+            this.label9.Location = new System.Drawing.Point(325, 179);
             this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(129, 23);
@@ -128,7 +129,7 @@ namespace HospitalManagementSystem
             // 
             // TestCost
             // 
-            this.TestCost.Location = new System.Drawing.Point(485, 206);
+            this.TestCost.Location = new System.Drawing.Point(581, 206);
             this.TestCost.Margin = new System.Windows.Forms.Padding(4);
             this.TestCost.Name = "TestCost";
             this.TestCost.Size = new System.Drawing.Size(205, 30);
@@ -138,7 +139,7 @@ namespace HospitalManagementSystem
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(481, 179);
+            this.label1.Location = new System.Drawing.Point(577, 179);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(47, 23);
@@ -149,18 +150,18 @@ namespace HospitalManagementSystem
             // TestsDGV
             // 
             this.TestsDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.TestsDGV.Location = new System.Drawing.Point(225, 386);
+            this.TestsDGV.Location = new System.Drawing.Point(204, 386);
             this.TestsDGV.Name = "TestsDGV";
             this.TestsDGV.RowHeadersWidth = 51;
             this.TestsDGV.RowTemplate.Height = 24;
-            this.TestsDGV.Size = new System.Drawing.Size(808, 396);
+            this.TestsDGV.Size = new System.Drawing.Size(1012, 396);
             this.TestsDGV.TabIndex = 48;
             this.TestsDGV.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.TestsDGV_CellContentClick);
             // 
             // AddTest
             // 
             this.AddTest.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AddTest.Location = new System.Drawing.Point(253, 330);
+            this.AddTest.Location = new System.Drawing.Point(329, 330);
             this.AddTest.Name = "AddTest";
             this.AddTest.Size = new System.Drawing.Size(236, 37);
             this.AddTest.TabIndex = 49;
@@ -171,7 +172,7 @@ namespace HospitalManagementSystem
             // DeleteTest
             // 
             this.DeleteTest.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DeleteTest.Location = new System.Drawing.Point(760, 330);
+            this.DeleteTest.Location = new System.Drawing.Point(836, 330);
             this.DeleteTest.Name = "DeleteTest";
             this.DeleteTest.Size = new System.Drawing.Size(236, 37);
             this.DeleteTest.TabIndex = 51;
@@ -182,7 +183,7 @@ namespace HospitalManagementSystem
             // EditTest
             // 
             this.EditTest.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.EditTest.Location = new System.Drawing.Point(505, 330);
+            this.EditTest.Location = new System.Drawing.Point(581, 330);
             this.EditTest.Name = "EditTest";
             this.EditTest.Size = new System.Drawing.Size(236, 37);
             this.EditTest.TabIndex = 50;

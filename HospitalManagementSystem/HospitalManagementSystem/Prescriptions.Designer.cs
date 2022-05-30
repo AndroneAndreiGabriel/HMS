@@ -262,13 +262,13 @@ namespace HospitalManagementSystem
             // PrescripDGV
             // 
             this.PrescripDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.PrescripDGV.Location = new System.Drawing.Point(221, 377);
+            this.PrescripDGV.Location = new System.Drawing.Point(203, 377);
             this.PrescripDGV.Name = "PrescripDGV";
             this.PrescripDGV.RowHeadersWidth = 51;
             this.PrescripDGV.RowTemplate.Height = 24;
-            this.PrescripDGV.Size = new System.Drawing.Size(997, 234);
+            this.PrescripDGV.Size = new System.Drawing.Size(1015, 254);
             this.PrescripDGV.TabIndex = 13;
-            this.PrescripDGV.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.PrescripDGV_CellContentClick);
+            this.PrescripDGV.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.PrescripDGV_CellClick);
             // 
             // label17
             // 
@@ -461,7 +461,7 @@ namespace HospitalManagementSystem
             // 
             this.ReturnHome.AutoSize = true;
             this.ReturnHome.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ReturnHome.Location = new System.Drawing.Point(83, 732);
+            this.ReturnHome.Location = new System.Drawing.Point(83, 729);
             this.ReturnHome.Name = "ReturnHome";
             this.ReturnHome.Size = new System.Drawing.Size(61, 23);
             this.ReturnHome.TabIndex = 11;
@@ -478,6 +478,7 @@ namespace HospitalManagementSystem
             this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox9.TabIndex = 10;
             this.pictureBox9.TabStop = false;
+            this.pictureBox9.Click += new System.EventHandler(this.pictureBox9_Click);
             // 
             // PrescripLbl
             // 

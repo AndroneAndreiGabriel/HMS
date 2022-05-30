@@ -9,7 +9,6 @@ namespace HospitalManagementSystem
     {
         public static string Role;
 
-        SqlConnection Con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFileName=C:\Users\Andrei\Documents\HospitalDB.mdf;Integrated Security=True;Connect Timeout=30");
         public Login()
         {
             InitializeComponent();
@@ -54,23 +53,24 @@ namespace HospitalManagementSystem
                 }
                 else
                 {
-                    Con.Open();
-                    SqlDataAdapter sda = new SqlDataAdapter("select count(*) from Doctors where DoctorName='" + Username.Text + "'and DoctorPassword='" + Password.Text + "'", Con);
-                    DataTable dt = new DataTable();
-                    sda.Fill(dt);
+                    using (var connection = Program.CreateOpenConnection())
+                    {
+                        SqlDataAdapter sda = new SqlDataAdapter("select count(*) from Doctors where DoctorName='" + Username.Text + "'and DoctorPassword='" + Password.Text + "'", connection);
+                        DataTable dt = new DataTable();
+                        sda.Fill(dt);
 
-                    if (dt.Rows[0][0].ToString() == "1")
-                    {
-                        Role = "Doctor";
-                        Homes Obj = new Homes();
-                        Obj.Show();
-                        this.Hide();
+                        if (dt.Rows[0][0].ToString() == "1")
+                        {
+                            Role = "Doctor";
+                            Homes Obj = new Homes();
+                            Obj.Show();
+                            this.Hide();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Credentiale gresite!");
+                        }
                     }
-                    else
-                    {
-                        MessageBox.Show("Credentiale gresite!");
-                    }
-                    Con.Close();
                 }
             }
             else
@@ -81,22 +81,23 @@ namespace HospitalManagementSystem
                 }
                 else
                 {
-                    Con.Open();
-                    SqlDataAdapter sda = new SqlDataAdapter("select count(*) from Receptionists where ReceptionistName='" + Username.Text + "'and ReceptionistPassword='" + Password.Text + "'", Con);
-                    DataTable dt = new DataTable();
-                    sda.Fill(dt);
-                    if (dt.Rows[0][0].ToString() == "1")
-                    {
-                        Role = "Receptionist";
-                        Homes Obj = new Homes();
-                        Obj.Show();
-                        this.Hide();
-                    }
-                    else
-                    {
-                        MessageBox.Show("Credentiale gresite!");
-                    }
-                    Con.Close();
+                        using (var connection = Program.CreateOpenConnection())
+                        {
+                            SqlDataAdapter sda = new SqlDataAdapter("select count(*) from Receptionists where ReceptionistName='" + Username.Text + "'and ReceptionistPassword='" + Password.Text + "'", connection);
+                            DataTable dt = new DataTable();
+                            sda.Fill(dt);
+                            if (dt.Rows[0][0].ToString() == "1")
+                            {
+                                Role = "Receptionist";
+                                Homes Obj = new Homes();
+                                Obj.Show();
+                                this.Hide();
+                            }
+                            else
+                            {
+                                MessageBox.Show("Credentiale gresite!");
+                            }
+                        }
                 }
             }
         }

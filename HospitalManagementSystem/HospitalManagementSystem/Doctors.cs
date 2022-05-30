@@ -8,8 +8,7 @@ namespace HospitalManagementSystem
     public partial class Doctors : Form
     {
 
-        private int     Key = 0;
-        SqlConnection   Con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFileName=C:\Users\Andrei\Documents\HospitalDB.mdf;Integrated Security=True;Connect Timeout=30");
+        private int     Key = 0;        
         public Doctors()
         {
             InitializeComponent();
@@ -17,6 +16,8 @@ namespace HospitalManagementSystem
 
             CountPatients();
             CountTests();
+            DoctorsDGV.ReadOnly = true;
+            DoctorsDGV.AllowUserToAddRows = false;
         }
         private void Doctors_Load(object sender, EventArgs e)
         {
@@ -25,22 +26,24 @@ namespace HospitalManagementSystem
 
         private void CountPatients()
         {
-            Con.Open();
-            SqlDataAdapter sda = new SqlDataAdapter("select count(*) from Patients", Con);
-            DataTable dt = new DataTable();
-            sda.Fill(dt);
-            PatientsNumber.Text = dt.Rows[0][0].ToString() + " pacienti";
-            Con.Close();
+            using (var connection = Program.CreateOpenConnection())
+            {
+                SqlDataAdapter sda = new SqlDataAdapter("select count(*) from Patients", connection);
+                DataTable dt = new DataTable();
+                sda.Fill(dt);
+                PatientsNumber.Text = dt.Rows[0][0].ToString() + " pacienti";
+            }
         }
 
         private void CountTests()
         {
-            Con.Open();
-            SqlDataAdapter sda = new SqlDataAdapter("select count(*) from Tests", Con);
-            DataTable dt = new DataTable();
-            sda.Fill(dt);
-            TestsNumber.Text = dt.Rows[0][0].ToString() + " teste";
-            Con.Close();
+            using (var connection = Program.CreateOpenConnection())
+            {
+                SqlDataAdapter sda = new SqlDataAdapter("select count(*) from Tests", connection);
+                DataTable dt = new DataTable();
+                sda.Fill(dt);
+                TestsNumber.Text = dt.Rows[0][0].ToString() + " teste";
+            }
         }
 
         private void AddDoctor_Click(object sender, EventArgs e)
@@ -60,19 +63,20 @@ namespace HospitalManagementSystem
             {
                 try
                 {
-                    Con.Open();
-                    SqlCommand cmd = new SqlCommand("insert into Doctors(DoctorName, DoctorSpecialization, DoctorDOB, DoctorPhone, DoctorAddress, DoctorExperience, DoctorCovidTest, DoctorPassword)"
-                                                                     + "values(@DNM, @DSP, @DDB, @DPH, @DAD, @DEX, @DCV, @DPS)", Con);
-                    cmd.Parameters.AddWithValue("@DNM", DoctorName.Text);
-                    cmd.Parameters.AddWithValue("@DSP", DoctorSpec.SelectedItem.ToString());
-                    cmd.Parameters.AddWithValue("@DDB", DoctorDOB.Value.Date);
-                    cmd.Parameters.AddWithValue("@DPH", DoctorPhone.Text);
-                    cmd.Parameters.AddWithValue("@DAD", DoctorAddress.Text);
-                    cmd.Parameters.AddWithValue("@DEX", DoctorExp.Text);
-                    cmd.Parameters.AddWithValue("@DCV", DoctorCovidTest.SelectedItem.ToString());
-                    cmd.Parameters.AddWithValue("@DPS", DoctorPassword.Text);
-                    cmd.ExecuteNonQuery();
-                    Con.Close();
+                    using (var connection = Program.CreateOpenConnection())
+                    {
+                        SqlCommand cmd = new SqlCommand("insert into Doctors(DoctorName, DoctorSpecialization, DoctorDOB, DoctorPhone, DoctorAddress, DoctorExperience, DoctorCovidTest, DoctorPassword)"
+                                                                     + "values(@DNM, @DSP, @DDB, @DPH, @DAD, @DEX, @DCV, @DPS)", connection);
+                        cmd.Parameters.AddWithValue("@DNM", DoctorName.Text);
+                        cmd.Parameters.AddWithValue("@DSP", DoctorSpec.SelectedItem.ToString());
+                        cmd.Parameters.AddWithValue("@DDB", DoctorDOB.Value.Date);
+                        cmd.Parameters.AddWithValue("@DPH", DoctorPhone.Text);
+                        cmd.Parameters.AddWithValue("@DAD", DoctorAddress.Text);
+                        cmd.Parameters.AddWithValue("@DEX", DoctorExp.Text);
+                        cmd.Parameters.AddWithValue("@DCV", DoctorCovidTest.SelectedItem.ToString());
+                        cmd.Parameters.AddWithValue("@DPS", DoctorPassword.Text);
+                        cmd.ExecuteNonQuery();
+                    }
 
                     DisplayDoctors();
                     Clear();
@@ -89,8 +93,9 @@ namespace HospitalManagementSystem
         {
             try
             {
-                Con.Open();
-                SqlCommand cmd = new SqlCommand("update Doctors set DoctorName = @DNM," +
+                using (var connection = Program.CreateOpenConnection())
+                {
+                    SqlCommand cmd = new SqlCommand("update Doctors set DoctorName = @DNM," +
                                                                    "DoctorSpecialization = @DSP," +
                                                                    "DoctorDOB = @DDB," +
                                                                    "DoctorPhone = @DPH," +
@@ -98,18 +103,18 @@ namespace HospitalManagementSystem
                                                                    "DoctorExperience = @DEX," +
                                                                    "DoctorCovidTest = @DCV," +
                                                                    "DoctorPassword = @DPS" +
-                                                                   " where DoctorId = @DID", Con);
-                cmd.Parameters.AddWithValue("@DNM", DoctorName.Text);
-                cmd.Parameters.AddWithValue("@DSP", DoctorSpec.Text);
-                cmd.Parameters.AddWithValue("@DDB", DoctorDOB.Value.Date);
-                cmd.Parameters.AddWithValue("@DPH", DoctorPhone.Text);
-                cmd.Parameters.AddWithValue("@DAD", DoctorAddress.Text);
-                cmd.Parameters.AddWithValue("@DEX", DoctorExp.Text);
-                cmd.Parameters.AddWithValue("@DCV", DoctorCovidTest.Text);
-                cmd.Parameters.AddWithValue("@DPS", DoctorPassword.Text);
-                cmd.Parameters.AddWithValue("@DID", Key);
-                cmd.ExecuteNonQuery();
-                Con.Close();
+                                                                   " where DoctorId = @DID", connection);
+                    cmd.Parameters.AddWithValue("@DNM", DoctorName.Text);
+                    cmd.Parameters.AddWithValue("@DSP", DoctorSpec.Text);
+                    cmd.Parameters.AddWithValue("@DDB", DoctorDOB.Value.Date);
+                    cmd.Parameters.AddWithValue("@DPH", DoctorPhone.Text);
+                    cmd.Parameters.AddWithValue("@DAD", DoctorAddress.Text);
+                    cmd.Parameters.AddWithValue("@DEX", DoctorExp.Text);
+                    cmd.Parameters.AddWithValue("@DCV", DoctorCovidTest.Text);
+                    cmd.Parameters.AddWithValue("@DPS", DoctorPassword.Text);
+                    cmd.Parameters.AddWithValue("@DID", Key);
+                    cmd.ExecuteNonQuery();
+                }
 
                 DisplayDoctors();
                 Clear();
@@ -131,11 +136,12 @@ namespace HospitalManagementSystem
             {
                 try
                 {
-                    Con.Open();
-                    SqlCommand cmd = new SqlCommand("delete from Doctors where DoctorId=@DID", Con);
-                    cmd.Parameters.AddWithValue("@DID", Key);
-                    cmd.ExecuteNonQuery();
-                    Con.Close();
+                    using (var connection = Program.CreateOpenConnection())
+                    {
+                        SqlCommand cmd = new SqlCommand("delete from Doctors where DoctorId=@DID", connection);
+                        cmd.Parameters.AddWithValue("@DID", Key);
+                        cmd.ExecuteNonQuery();
+                    }
 
                     DisplayDoctors();
                     Clear();
@@ -148,37 +154,17 @@ namespace HospitalManagementSystem
             }
         }
 
-        private void DoctorsDGV_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.RowIndex < 0)
-            {
-                return;
-            }
-            else
-            {
-                Key = Convert.ToInt32(DoctorsDGV.Rows[e.RowIndex].Cells[0].Value);
-
-                DoctorName.Text = DoctorsDGV.Rows[e.RowIndex].Cells[1].Value.ToString();
-                DoctorSpec.Text = DoctorsDGV.Rows[e.RowIndex].Cells[2].Value.ToString();
-                DoctorDOB.Text = DoctorsDGV.Rows[e.RowIndex].Cells[3].Value.ToString();
-                DoctorPhone.Text = DoctorsDGV.Rows[e.RowIndex].Cells[4].Value.ToString();
-                DoctorAddress.Text = DoctorsDGV.Rows[e.RowIndex].Cells[5].Value.ToString();
-                DoctorExp.Text = DoctorsDGV.Rows[e.RowIndex].Cells[6].Value.ToString();
-                DoctorCovidTest.Text = DoctorsDGV.Rows[e.RowIndex].Cells[7].Value.ToString();
-                DoctorPassword.Text = DoctorsDGV.Rows[e.RowIndex].Cells[8].Value.ToString();
-            }
-        }
-
         private void DisplayDoctors()
         {
-            Con.Open();
-            string Query = "select * from Doctors";
-            SqlDataAdapter sda = new SqlDataAdapter(Query, Con);
-            SqlCommandBuilder builder = new SqlCommandBuilder(sda);
-            var ds = new DataSet();
-            sda.Fill(ds);
-            DoctorsDGV.DataSource = ds.Tables[0];
-            Con.Close();
+            using (var connection = Program.CreateOpenConnection())
+            {
+                string Query = "select * from Doctors";
+                SqlDataAdapter sda = new SqlDataAdapter(Query, connection);
+                SqlCommandBuilder builder = new SqlCommandBuilder(sda);
+                var ds = new DataSet();
+                sda.Fill(ds);
+                DoctorsDGV.DataSource = ds.Tables[0];
+            }
         }
 
         private void Clear()
@@ -200,6 +186,34 @@ namespace HospitalManagementSystem
         }
 
         private void ReturnHome_Click(object sender, EventArgs e)
+        {
+            Homes obj = new Homes();
+            obj.Show();
+            this.Hide();
+        }
+
+        private void DoctorsDGV_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex < 0)
+            {
+                return;
+            }
+            else
+            {
+                Key = Convert.ToInt32(DoctorsDGV.Rows[e.RowIndex].Cells[0].Value);
+
+                DoctorName.Text = DoctorsDGV.Rows[e.RowIndex].Cells[1].Value.ToString();
+                DoctorSpec.Text = DoctorsDGV.Rows[e.RowIndex].Cells[2].Value.ToString();
+                DoctorDOB.Text = DoctorsDGV.Rows[e.RowIndex].Cells[3].Value.ToString();
+                DoctorPhone.Text = DoctorsDGV.Rows[e.RowIndex].Cells[4].Value.ToString();
+                DoctorAddress.Text = DoctorsDGV.Rows[e.RowIndex].Cells[5].Value.ToString();
+                DoctorExp.Text = DoctorsDGV.Rows[e.RowIndex].Cells[6].Value.ToString();
+                DoctorCovidTest.Text = DoctorsDGV.Rows[e.RowIndex].Cells[7].Value.ToString();
+                DoctorPassword.Text = DoctorsDGV.Rows[e.RowIndex].Cells[8].Value.ToString();
+            }
+        }
+
+        private void pictureBox9_Click(object sender, EventArgs e)
         {
             Homes obj = new Homes();
             obj.Show();

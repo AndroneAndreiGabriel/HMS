@@ -79,9 +79,9 @@ namespace HospitalManagementSystem
             // 
             this.ReturnHome.AutoSize = true;
             this.ReturnHome.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ReturnHome.Location = new System.Drawing.Point(83, 732);
+            this.ReturnHome.Location = new System.Drawing.Point(83, 729);
             this.ReturnHome.Name = "ReturnHome";
-            this.ReturnHome.Size = new System.Drawing.Size(76, 29);
+            this.ReturnHome.Size = new System.Drawing.Size(61, 23);
             this.ReturnHome.TabIndex = 11;
             this.ReturnHome.Text = "Acasa";
             this.ReturnHome.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -203,6 +203,7 @@ namespace HospitalManagementSystem
             this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox9.TabIndex = 10;
             this.pictureBox9.TabStop = false;
+            this.pictureBox9.Click += new System.EventHandler(this.pictureBox9_Click);
             // 
             // label7
             // 
@@ -355,7 +356,7 @@ namespace HospitalManagementSystem
             this.ReceptionistDGV.RowTemplate.Height = 24;
             this.ReceptionistDGV.Size = new System.Drawing.Size(997, 220);
             this.ReceptionistDGV.TabIndex = 9;
-            this.ReceptionistDGV.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ReceptionistDGV_CellContentClick);
+            this.ReceptionistDGV.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ReceptionistDGV_CellClick);
             // 
             // panel1
             // 

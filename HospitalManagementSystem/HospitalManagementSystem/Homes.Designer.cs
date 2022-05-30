@@ -75,7 +75,7 @@ namespace HospitalManagementSystem
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(202, -1);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(1015, 552);
+            this.pictureBox1.Size = new System.Drawing.Size(1015, 577);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
@@ -199,6 +199,7 @@ namespace HospitalManagementSystem
             this.patientsImg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.patientsImg.TabIndex = 2;
             this.patientsImg.TabStop = false;
+            this.patientsImg.Click += new System.EventHandler(this.patientsImg_Click);
             // 
             // DoctorsLbl
             // 
@@ -221,6 +222,7 @@ namespace HospitalManagementSystem
             this.imageDoctor.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.imageDoctor.TabIndex = 4;
             this.imageDoctor.TabStop = false;
+            this.imageDoctor.Click += new System.EventHandler(this.imageDoctor_Click);
             // 
             // LabTestsLbl
             // 
@@ -243,6 +245,7 @@ namespace HospitalManagementSystem
             this.testsImg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.testsImg.TabIndex = 6;
             this.testsImg.TabStop = false;
+            this.testsImg.Click += new System.EventHandler(this.testsImg_Click);
             // 
             // ReceptionistsLbl
             // 
@@ -265,6 +268,7 @@ namespace HospitalManagementSystem
             this.recepImg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.recepImg.TabIndex = 8;
             this.recepImg.TabStop = false;
+            this.recepImg.Click += new System.EventHandler(this.recepImg_Click);
             // 
             // panel1
             // 
@@ -293,6 +297,7 @@ namespace HospitalManagementSystem
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox4.TabIndex = 10;
             this.pictureBox4.TabStop = false;
+            this.pictureBox4.Click += new System.EventHandler(this.pictureBox4_Click);
             // 
             // PrescripLbl
             // 

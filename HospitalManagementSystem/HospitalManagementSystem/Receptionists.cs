@@ -8,11 +8,13 @@ namespace HospitalManagementSystem
     public partial class Receptionists : Form
     {
         private int Key = 0;
-        SqlConnection Con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFileName=C:\Users\Andrei\Documents\HospitalDB.mdf;Integrated Security=True;Connect Timeout=30");
         public Receptionists()
         {
             InitializeComponent();
             DisplayRecep();
+
+            ReceptionistDGV.ReadOnly = true;
+            ReceptionistDGV.AllowUserToAddRows = false;
         }
 
         private void Receptionists_Load(object sender, EventArgs e)
@@ -22,14 +24,15 @@ namespace HospitalManagementSystem
 
         private void DisplayRecep()
         {
-            Con.Open();
-            string Query = "select * from Receptionists";
-            SqlDataAdapter sda = new SqlDataAdapter(Query, Con);
-            SqlCommandBuilder builder = new SqlCommandBuilder(sda);
-            var ds = new DataSet();
-            sda.Fill(ds);
-            ReceptionistDGV.DataSource = ds.Tables[0];
-            Con.Close();
+            using (var connection = Program.CreateOpenConnection())
+            {
+                string Query = "select * from Receptionists";
+                SqlDataAdapter sda = new SqlDataAdapter(Query, connection);
+                SqlCommandBuilder builder = new SqlCommandBuilder(sda);
+                var ds = new DataSet();
+                sda.Fill(ds);
+                ReceptionistDGV.DataSource = ds.Tables[0];
+            }
         }
 
         private void AddBttn_Click(object sender, EventArgs e)
@@ -42,16 +45,17 @@ namespace HospitalManagementSystem
             {
                 try
                 {
-                    Con.Open();
-                    SqlCommand cmd = new SqlCommand("insert into Receptionists(ReceptionistName, ReceptionistPhone, ReceptionistPassword, ReceptionistCovidTest, ReceptionistAddress)"
-                                                                     + "values(@RNM, @RPH, @RPS, @RCV, @RAD)", Con);
-                    cmd.Parameters.AddWithValue("@RNM", RecepName.Text);
-                    cmd.Parameters.AddWithValue("@RPH", RecepPhone.Text);
-                    cmd.Parameters.AddWithValue("@RPS", RecepPassword.Text);
-                    cmd.Parameters.AddWithValue("@RCV", RecepCovidTest.Text);
-                    cmd.Parameters.AddWithValue("@RAD", RecepAddress.Text);
-                    cmd.ExecuteNonQuery();
-                    Con.Close();
+                    using (var connection = Program.CreateOpenConnection())
+                    {
+                        SqlCommand cmd = new SqlCommand("insert into Receptionists(ReceptionistName, ReceptionistPhone, ReceptionistPassword, ReceptionistCovidTest, ReceptionistAddress)"
+                                                                     + "values(@RNM, @RPH, @RPS, @RCV, @RAD)", connection);
+                        cmd.Parameters.AddWithValue("@RNM", RecepName.Text);
+                        cmd.Parameters.AddWithValue("@RPH", RecepPhone.Text);
+                        cmd.Parameters.AddWithValue("@RPS", RecepPassword.Text);
+                        cmd.Parameters.AddWithValue("@RCV", RecepCovidTest.Text);
+                        cmd.Parameters.AddWithValue("@RAD", RecepAddress.Text);
+                        cmd.ExecuteNonQuery();
+                    }
 
                     DisplayRecep();
                     Clear();
@@ -68,21 +72,22 @@ namespace HospitalManagementSystem
         {
             try
             {
-                Con.Open();
-                SqlCommand cmd = new SqlCommand("update Receptionists set ReceptionistName = @RNM," +
+                using (var connection = Program.CreateOpenConnection())
+                {
+                    SqlCommand cmd = new SqlCommand("update Receptionists set ReceptionistName = @RNM," +
                                                                             "ReceptionistPhone = @RPH," +
                                                                             "ReceptionistPassword = @RPS," +
                                                                             "ReceptionistCovidTest = @RCV," +
                                                                             "ReceptionistAddress = @RAD" +
-                                                                            " where ReceptionistId = @RID", Con);
-                cmd.Parameters.AddWithValue("@RNM", RecepName.Text);
-                cmd.Parameters.AddWithValue("@RPH", RecepPhone.Text);
-                cmd.Parameters.AddWithValue("@RPS", RecepPassword.Text);
-                cmd.Parameters.AddWithValue("@RCV", RecepCovidTest.Text);
-                cmd.Parameters.AddWithValue("@RAD", RecepAddress.Text);
-                cmd.Parameters.AddWithValue("@RID", Key);
-                cmd.ExecuteNonQuery();
-                Con.Close();
+                                                                            " where ReceptionistId = @RID", connection);
+                    cmd.Parameters.AddWithValue("@RNM", RecepName.Text);
+                    cmd.Parameters.AddWithValue("@RPH", RecepPhone.Text);
+                    cmd.Parameters.AddWithValue("@RPS", RecepPassword.Text);
+                    cmd.Parameters.AddWithValue("@RCV", RecepCovidTest.Text);
+                    cmd.Parameters.AddWithValue("@RAD", RecepAddress.Text);
+                    cmd.Parameters.AddWithValue("@RID", Key);
+                    cmd.ExecuteNonQuery();
+                }
 
                 DisplayRecep();
                 Clear();
@@ -104,11 +109,12 @@ namespace HospitalManagementSystem
             {
                 try
                 {
-                    Con.Open();
-                    SqlCommand cmd = new SqlCommand("delete from Receptionists where ReceptionistId=@RID", Con);
-                    cmd.Parameters.AddWithValue("@RID", Key);
-                    cmd.ExecuteNonQuery();
-                    Con.Close();
+                    using (var connection = Program.CreateOpenConnection())
+                    {
+                        SqlCommand cmd = new SqlCommand("delete from Receptionists where ReceptionistId=@RID", connection);
+                        cmd.Parameters.AddWithValue("@RID", Key);
+                        cmd.ExecuteNonQuery();
+                    }
 
                     DisplayRecep();
                     Clear();
@@ -120,8 +126,8 @@ namespace HospitalManagementSystem
                 }
             }
         }
-
-        private void ReceptionistDGV_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        
+        private void ReceptionistDGV_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex < 0)
             {
@@ -155,6 +161,13 @@ namespace HospitalManagementSystem
         }
 
         private void ReturnHome_Click(object sender, EventArgs e)
+        {
+            Homes obj = new Homes();
+            obj.Show();
+            this.Hide();
+        }
+
+        private void pictureBox9_Click(object sender, EventArgs e)
         {
             Homes obj = new Homes();
             obj.Show();

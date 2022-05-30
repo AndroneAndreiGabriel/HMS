@@ -9,7 +9,6 @@ namespace HospitalManagementSystem
     public partial class Prescriptions : Form
     {
         int Key = 0;
-        SqlConnection Con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFileName=C:\Users\Andrei\Documents\HospitalDB.mdf;Integrated Security=True;Connect Timeout=30");
         public Prescriptions()
         {
             InitializeComponent();
@@ -18,6 +17,9 @@ namespace HospitalManagementSystem
             GetPatientId();
             GetTestId();
             Clear();
+
+            PrescripDGV.ReadOnly = true;
+            PrescripDGV.AllowUserToAddRows = false;
         }
 
         private void Prescriptions_Load(object sender, EventArgs e)
@@ -27,44 +29,47 @@ namespace HospitalManagementSystem
 
         private void DisplayPrescriptions()
         {
-            Con.Open();
-            string Query = "select * from Prescriptions";
-            SqlDataAdapter sda = new SqlDataAdapter(Query, Con);
-            SqlCommandBuilder builder = new SqlCommandBuilder(sda);
-            var ds = new DataSet();
-            sda.Fill(ds);
-            PrescripDGV.DataSource = ds.Tables[0];
-            Con.Close();
+            using (var connection = Program.CreateOpenConnection())
+            {
+                string Query = "select * from Prescriptions";
+                SqlDataAdapter sda = new SqlDataAdapter(Query, connection);
+                SqlCommandBuilder builder = new SqlCommandBuilder(sda);
+                var ds = new DataSet();
+                sda.Fill(ds);
+                PrescripDGV.DataSource = ds.Tables[0];
+            }
         }
 
         private void GetDoctorId()
         {
-            Con.Open();
-            SqlCommand cmd = new SqlCommand("select DoctorId from Doctors", Con);
-            SqlDataReader reader;
-            reader = cmd.ExecuteReader();
+            using (var connection = Program.CreateOpenConnection())
+            {
+                SqlCommand cmd = new SqlCommand("select DoctorId from Doctors", connection);
+                SqlDataReader reader;
+                reader = cmd.ExecuteReader();
 
-            DataTable dataTable = new DataTable();
-            dataTable.Columns.Add("DoctorId", typeof(int));
-            dataTable.Load(reader);
+                DataTable dataTable = new DataTable();
+                dataTable.Columns.Add("DoctorId", typeof(int));
+                dataTable.Load(reader);
 
-            DoctorId.ValueMember = "DoctorId";
-            DoctorId.DataSource = dataTable;
-            Con.Close();
+                DoctorId.ValueMember = "DoctorId";
+                DoctorId.DataSource = dataTable;
+            }
         }
         private void GetDoctorName()
         {
-            Con.Open();
-            string Query = "select * from Doctors where DoctorId=" + DoctorId.SelectedValue.ToString() + "";
-            SqlCommand cmd = new SqlCommand(Query, Con);
-            DataTable dataTable = new DataTable();
-            SqlDataAdapter sda = new SqlDataAdapter(cmd);
-            sda.Fill(dataTable);
-            foreach (DataRow dataRow in dataTable.Rows)
+            using (var connection = Program.CreateOpenConnection())
             {
-                DoctorName.Text = dataRow["DoctorName"].ToString();
+                string Query = "select * from Doctors where DoctorId=" + DoctorId.SelectedValue.ToString() + "";
+                SqlCommand cmd = new SqlCommand(Query, connection);
+                DataTable dataTable = new DataTable();
+                SqlDataAdapter sda = new SqlDataAdapter(cmd);
+                sda.Fill(dataTable);
+                foreach (DataRow dataRow in dataTable.Rows)
+                {
+                    DoctorName.Text = dataRow["DoctorName"].ToString();
+                }
             }
-            Con.Close();
         }
 
         private void DoctorId_SelectionChangeCommitted(object sender, EventArgs e)
@@ -74,65 +79,69 @@ namespace HospitalManagementSystem
 
         private void GetPatientId()
         {
-            Con.Open();
-            SqlCommand cmd = new SqlCommand("select PatientId from Patients", Con);
-            SqlDataReader reader;
-            reader = cmd.ExecuteReader();
+            using (var connection = Program.CreateOpenConnection())
+            {
+                SqlCommand cmd = new SqlCommand("select PatientId from Patients", connection);
+                SqlDataReader reader;
+                reader = cmd.ExecuteReader();
 
-            DataTable dataTable = new DataTable();
-            dataTable.Columns.Add("PatientId", typeof(int));
-            dataTable.Load(reader);
+                DataTable dataTable = new DataTable();
+                dataTable.Columns.Add("PatientId", typeof(int));
+                dataTable.Load(reader);
 
-            PatientId.ValueMember = "PatientId";
-            PatientId.DataSource = dataTable;
-            Con.Close();
+                PatientId.ValueMember = "PatientId";
+                PatientId.DataSource = dataTable;
+            }
         }
 
         private void GetPatientName()
         {
-            Con.Open();
-            string Query = "select * from Patients where PatientId=" + PatientId.SelectedValue.ToString() + "";
-            SqlCommand cmd = new SqlCommand(Query, Con);
-            DataTable dataTable = new DataTable();
-            SqlDataAdapter sda = new SqlDataAdapter(cmd);
-            sda.Fill(dataTable);
-            foreach (DataRow dataRow in dataTable.Rows)
+            using (var connection = Program.CreateOpenConnection())
             {
-                PatientName.Text = dataRow["PatientName"].ToString();
+                string Query = "select * from Patients where PatientId=" + PatientId.SelectedValue.ToString() + "";
+                SqlCommand cmd = new SqlCommand(Query, connection);
+                DataTable dataTable = new DataTable();
+                SqlDataAdapter sda = new SqlDataAdapter(cmd);
+                sda.Fill(dataTable);
+                foreach (DataRow dataRow in dataTable.Rows)
+                {
+                    PatientName.Text = dataRow["PatientName"].ToString();
+                }
             }
-            Con.Close();
         }
 
         private void GetTestId()
         {
-            Con.Open();
-            SqlCommand cmd = new SqlCommand("select TestId from Tests", Con);
-            SqlDataReader reader;
-            reader = cmd.ExecuteReader();
+            using (var connection = Program.CreateOpenConnection())
+            {
+                SqlCommand cmd = new SqlCommand("select TestId from Tests", connection);
+                SqlDataReader reader;
+                reader = cmd.ExecuteReader();
 
-            DataTable dataTable = new DataTable();
-            dataTable.Columns.Add("TestId", typeof(int));
-            dataTable.Load(reader);
+                DataTable dataTable = new DataTable();
+                dataTable.Columns.Add("TestId", typeof(int));
+                dataTable.Load(reader);
 
-            TestId.ValueMember = "TestId";
-            TestId.DataSource = dataTable;
-            Con.Close();
+                TestId.ValueMember = "TestId";
+                TestId.DataSource = dataTable;
+            }
         }
 
         private void GetTestName()
         {
-            Con.Open();
-            string Query = "select * from Tests where TestId=" + TestId.SelectedValue.ToString() + "";
-            SqlCommand cmd = new SqlCommand(Query, Con);
-            DataTable dataTable = new DataTable();
-            SqlDataAdapter sda = new SqlDataAdapter(cmd);
-            sda.Fill(dataTable);
-            foreach (DataRow dataRow in dataTable.Rows)
+            using (var connection = Program.CreateOpenConnection())
             {
-                TestName.Text = dataRow["TestName"].ToString();
-                Cost.Text = dataRow["TestCost"].ToString();
+                string Query = "select * from Tests where TestId=" + TestId.SelectedValue.ToString() + "";
+                SqlCommand cmd = new SqlCommand(Query, connection);
+                DataTable dataTable = new DataTable();
+                SqlDataAdapter sda = new SqlDataAdapter(cmd);
+                sda.Fill(dataTable);
+                foreach (DataRow dataRow in dataTable.Rows)
+                {
+                    TestName.Text = dataRow["TestName"].ToString();
+                    Cost.Text = dataRow["TestCost"].ToString();
+                }
             }
-            Con.Close();
         }
 
         private void Clear()
@@ -175,20 +184,21 @@ namespace HospitalManagementSystem
             {
                 try
                 {
-                    Con.Open();
-                    SqlCommand cmd = new SqlCommand("insert into Prescriptions(DoctorId, DoctorName, PatientId, PatientName, LabTestId, LabTestName, Medicines, Cost)"
-                                                                     + "values(@DID, @DNM, @PID, @PNM, @TID, @TNM, @MED, @CST)", Con);
-                    cmd.Parameters.AddWithValue("@DID", DoctorId.SelectedValue.ToString());
-                    cmd.Parameters.AddWithValue("@DNM", DoctorName.Text);
-                    cmd.Parameters.AddWithValue("@PID", PatientId.SelectedValue.ToString());
-                    cmd.Parameters.AddWithValue("@PNM", PatientName.Text);
-                    cmd.Parameters.AddWithValue("@TID", TestId.SelectedValue.ToString());
-                    cmd.Parameters.AddWithValue("@TNM", TestName.Text);
-                    cmd.Parameters.AddWithValue("@MED", Medicines.Text);
-                    cmd.Parameters.AddWithValue("@CST", Cost.Text);
-                    cmd.Parameters.AddWithValue("@PRID", Key);
-                    cmd.ExecuteNonQuery();
-                    Con.Close();
+                    using (var connection = Program.CreateOpenConnection())
+                    {
+                        SqlCommand cmd = new SqlCommand("insert into Prescriptions(DoctorId, DoctorName, PatientId, PatientName, LabTestId, LabTestName, Medicines, Cost)"
+                                                                     + "values(@DID, @DNM, @PID, @PNM, @TID, @TNM, @MED, @CST)", connection);
+                        cmd.Parameters.AddWithValue("@DID", DoctorId.SelectedValue.ToString());
+                        cmd.Parameters.AddWithValue("@DNM", DoctorName.Text);
+                        cmd.Parameters.AddWithValue("@PID", PatientId.SelectedValue.ToString());
+                        cmd.Parameters.AddWithValue("@PNM", PatientName.Text);
+                        cmd.Parameters.AddWithValue("@TID", TestId.SelectedValue.ToString());
+                        cmd.Parameters.AddWithValue("@TNM", TestName.Text);
+                        cmd.Parameters.AddWithValue("@MED", Medicines.Text);
+                        cmd.Parameters.AddWithValue("@CST", Cost.Text);
+                        cmd.Parameters.AddWithValue("@PRID", Key);
+                        cmd.ExecuteNonQuery();
+                    }
 
                     DisplayPrescriptions();
                     Clear();
@@ -205,8 +215,9 @@ namespace HospitalManagementSystem
         {
             try
             {
-                Con.Open();
-                SqlCommand cmd = new SqlCommand("update Prescriptions set DoctorId = @DID, " +
+                using (var connection = Program.CreateOpenConnection())
+                {
+                    SqlCommand cmd = new SqlCommand("update Prescriptions set DoctorId = @DID, " +
                                                                          "DoctorName = @DNM, " +
                                                                          "PatientId = @PID, " +
                                                                          "PatientName = @PNM, " +
@@ -214,18 +225,18 @@ namespace HospitalManagementSystem
                                                                          "LabTestName = @TNM, " +
                                                                          "Medicines = @MED, " +
                                                                          "Cost = @CST " +
-                                                                  " where PrescriptionId = @PRID", Con);
-                cmd.Parameters.AddWithValue("@DID", DoctorId.SelectedValue.ToString());
-                cmd.Parameters.AddWithValue("@DNM", DoctorName.Text);
-                cmd.Parameters.AddWithValue("@PID", PatientId.SelectedValue.ToString());
-                cmd.Parameters.AddWithValue("@PNM", PatientName.Text);
-                cmd.Parameters.AddWithValue("@TID", TestId.SelectedValue.ToString());
-                cmd.Parameters.AddWithValue("@TNM", TestName.Text);
-                cmd.Parameters.AddWithValue("@MED", Medicines.Text);
-                cmd.Parameters.AddWithValue("@CST", Cost.Text);
-                cmd.Parameters.AddWithValue("@PRID", Key);
-                cmd.ExecuteNonQuery();
-                Con.Close();
+                                                                  " where PrescriptionId = @PRID", connection);
+                    cmd.Parameters.AddWithValue("@DID", DoctorId.SelectedValue.ToString());
+                    cmd.Parameters.AddWithValue("@DNM", DoctorName.Text);
+                    cmd.Parameters.AddWithValue("@PID", PatientId.SelectedValue.ToString());
+                    cmd.Parameters.AddWithValue("@PNM", PatientName.Text);
+                    cmd.Parameters.AddWithValue("@TID", TestId.SelectedValue.ToString());
+                    cmd.Parameters.AddWithValue("@TNM", TestName.Text);
+                    cmd.Parameters.AddWithValue("@MED", Medicines.Text);
+                    cmd.Parameters.AddWithValue("@CST", Cost.Text);
+                    cmd.Parameters.AddWithValue("@PRID", Key);
+                    cmd.ExecuteNonQuery();
+                }
 
                 DisplayPrescriptions();
                 Clear();
@@ -247,11 +258,12 @@ namespace HospitalManagementSystem
             {
                 try
                 {
-                    Con.Open();
-                    SqlCommand cmd = new SqlCommand("delete from Prescriptions where PrescriptionId=@PRID", Con);
-                    cmd.Parameters.AddWithValue("@PRID", Key);
-                    cmd.ExecuteNonQuery();
-                    Con.Close();
+                    using (var connection = Program.CreateOpenConnection())
+                    {
+                        SqlCommand cmd = new SqlCommand("delete from Prescriptions where PrescriptionId=@PRID", connection);
+                        cmd.Parameters.AddWithValue("@PRID", Key);
+                        cmd.ExecuteNonQuery();
+                    }
 
                     DisplayPrescriptions();
                     Clear();
@@ -263,8 +275,8 @@ namespace HospitalManagementSystem
                 }
             }
         }
-
-        private void PrescripDGV_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        
+        private void PrescripDGV_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex < 0)
             {
@@ -308,6 +320,13 @@ namespace HospitalManagementSystem
         }
 
         private void ReturnHome_Click(object sender, EventArgs e)
+        {
+            Homes obj = new Homes();
+            obj.Show();
+            this.Hide();
+        }
+
+        private void pictureBox9_Click(object sender, EventArgs e)
         {
             Homes obj = new Homes();
             obj.Show();
