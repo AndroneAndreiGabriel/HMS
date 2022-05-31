@@ -25,6 +25,7 @@ namespace HospitalManagementSystem
             PatientsDGV.ReadOnly = true;
             PatientsDGV.AllowUserToAddRows = false;
             PatientDaysInHospital.ReadOnly = true;
+            PatientAge.ReadOnly = true;
         }
        
         private void Patients_Load(object sender, EventArgs e)
@@ -55,6 +56,7 @@ namespace HospitalManagementSystem
             PatientName.Text = "";
             PatientGender.Text = "";
             PatientDOB.Text = "";
+            PatientAge.Text = "";
             PatientPhone.Text = "";
             PatientAddress.Text = "";
             PatientAllergies.Text = "";
@@ -85,11 +87,15 @@ namespace HospitalManagementSystem
                 {
                     using (var connection = Program.CreateOpenConnection())
                     {
-                        SqlCommand cmd = new SqlCommand("insert into Patients(PatientName, PatientGender, PatientDOB, PatientPhone, PatientAddress, PatientAllergies, PatientCovidTest, CheckInDate, CheckOutDate, DaysInHospital)"
-                                                                     + "values(@PNM, @PGN, @PDB, @PPH, @PAD, @PAL, @PCV, @CID, @COD, @DIH)", connection);
+                        SqlCommand cmd = new SqlCommand("insert into Patients(PatientName, PatientGender, PatientDOB, PatientAge, PatientPhone, PatientAddress, PatientAllergies, PatientCovidTest, PatientCheckInDate, PatientCheckOutDate, PatientDaysInHospital)"
+                                                                     + "values(@PNM, @PGN, @PDB, @PAG, @PPH, @PAD, @PAL, @PCV, @CID, @COD, @DIH)", connection);
                         cmd.Parameters.AddWithValue("@PNM", PatientName.Text);
                         cmd.Parameters.AddWithValue("@PGN", PatientGender.SelectedItem.ToString());
                         cmd.Parameters.AddWithValue("@PDB", PatientDOB.Value.Date);
+
+                        var patientAge = DateTime.Today.Year - PatientDOB.Value.Date.Year;
+                        cmd.Parameters.AddWithValue("@PAG", patientAge.ToString() + " ani");
+
                         cmd.Parameters.AddWithValue("@PPH", PatientPhone.Text);
                         cmd.Parameters.AddWithValue("@PAD", PatientAddress.Text);
                         cmd.Parameters.AddWithValue("@PAL", PatientAllergies.Text);
@@ -98,7 +104,6 @@ namespace HospitalManagementSystem
                         cmd.Parameters.AddWithValue("@COD", PatientCheckOutDate.Value.Date);
 
                         var differenceOfDate = PatientCheckOutDate.Value.Date - PatientCheckInDate.Value.Date;
-
                         cmd.Parameters.AddWithValue("@DIH", differenceOfDate.Days);
                         cmd.ExecuteNonQuery();
                     }
@@ -123,6 +128,7 @@ namespace HospitalManagementSystem
                     SqlCommand cmd = new SqlCommand("update Patients set PatientName = @PNM," +
                                                                     "PatientGender = @PGN," +
                                                                     "PatientDOB = @PDB," +
+                                                                    "PatientAge = @PAG," +
                                                                     "PatientPhone = @PPH," +
                                                                     "PatientAddress = @PAD," +
                                                                     "PatientAllergies = @PAL," +
@@ -134,6 +140,10 @@ namespace HospitalManagementSystem
                     cmd.Parameters.AddWithValue("@PNM", PatientName.Text);
                     cmd.Parameters.AddWithValue("@PGN", PatientGender.SelectedItem.ToString());
                     cmd.Parameters.AddWithValue("@PDB", PatientDOB.Value.Date);
+
+                    var patientAge = DateTime.Today.Year - PatientDOB.Value.Date.Year;
+                    cmd.Parameters.AddWithValue("@PAG", patientAge.ToString() + " ani");
+
                     cmd.Parameters.AddWithValue("@PPH", PatientPhone.Text);
                     cmd.Parameters.AddWithValue("@PAD", PatientAddress.Text);
                     cmd.Parameters.AddWithValue("@PAL", PatientAllergies.Text);
@@ -199,17 +209,18 @@ namespace HospitalManagementSystem
                 PatientName.Text = PatientsDGV.Rows[e.RowIndex].Cells[1].Value.ToString();
                 PatientGender.Text = PatientsDGV.Rows[e.RowIndex].Cells[2].Value.ToString();
                 PatientDOB.Text = PatientsDGV.Rows[e.RowIndex].Cells[3].Value.ToString();
-                PatientPhone.Text = PatientsDGV.Rows[e.RowIndex].Cells[4].Value.ToString();
+                PatientAge.Text = PatientsDGV.Rows[e.RowIndex].Cells[4].Value.ToString();
                 PatientAddress.Text = PatientsDGV.Rows[e.RowIndex].Cells[5].Value.ToString();
-                PatientAllergies.Text = PatientsDGV.Rows[e.RowIndex].Cells[6].Value.ToString();
-                PatientCovidTest.Text = PatientsDGV.Rows[e.RowIndex].Cells[7].Value.ToString();
-                PatientCheckInDate.Text = PatientsDGV.Rows[e.RowIndex].Cells[8].Value.ToString();
-                PatientCheckOutDate.Text = PatientsDGV.Rows[e.RowIndex].Cells[9].Value.ToString();
-                PatientDaysInHospital.Text = PatientsDGV.Rows[e.RowIndex].Cells[10].Value.ToString();
+                PatientPhone.Text = PatientsDGV.Rows[e.RowIndex].Cells[6].Value.ToString();
+                PatientAllergies.Text = PatientsDGV.Rows[e.RowIndex].Cells[7].Value.ToString();
+                PatientCovidTest.Text = PatientsDGV.Rows[e.RowIndex].Cells[8].Value.ToString();
+                PatientCheckInDate.Text = PatientsDGV.Rows[e.RowIndex].Cells[9].Value.ToString();
+                PatientCheckOutDate.Text = PatientsDGV.Rows[e.RowIndex].Cells[10].Value.ToString();
+                PatientDaysInHospital.Text = PatientsDGV.Rows[e.RowIndex].Cells[11].Value.ToString();
             }
         }
 
-        private void ReturnHome_Click(object sender, EventArgs e)
+        private void ReturnHomeLbl_Click(object sender, EventArgs e)
         {
             Homes obj = new Homes();
             obj.Show();
@@ -238,16 +249,45 @@ namespace HospitalManagementSystem
             }
         }
 
-        private void pictureBox9_Click(object sender, EventArgs e)
+        private void ReturnHomeImg_Click(object sender, EventArgs e)
         {
             Homes obj = new Homes();
             obj.Show();
             this.Hide();
         }
-
-        private void PatientDaysInHospital_TextChanged(object sender, EventArgs e)
+       
+        private void PatientCheckOutDate_ValueChanged(object sender, EventArgs e)
         {
+            if (PatientCheckOutDate.Value.Date < PatientCheckInDate.Value.Date)
+            {
+                MessageBox.Show("Data externarii nu poate fi mai mica decat data internarii!");
+                PatientCheckOutDate.Text = DateTime.Today.ToString();
+            }
+            else
+            {
+                var differenceOfDate = PatientCheckOutDate.Value.Date - PatientCheckInDate.Value.Date;
+                PatientDaysInHospital.Text = differenceOfDate.Days.ToString();
+            }
+        }
 
+        private void PatientDOB_ValueChanged(object sender, EventArgs e)
+        {
+            var patientAge = DateTime.Today.Year - PatientDOB.Value.Date.Year;
+            PatientAge.Text = patientAge.ToString() + " ani";
+        }
+
+        private void PatientCheckInDate_ValueChanged(object sender, EventArgs e)
+        {
+            if (PatientCheckOutDate.Value.Date < PatientCheckInDate.Value.Date)
+            {
+                MessageBox.Show("Data externarii nu poate fi mai mica decat data internarii!");
+                PatientCheckInDate.Text = DateTime.Today.ToString();
+            }
+            else
+            {
+                var differenceOfDate = PatientCheckOutDate.Value.Date - PatientCheckInDate.Value.Date;
+                PatientDaysInHospital.Text = differenceOfDate.Days.ToString();
+            }
         }
     }
 }

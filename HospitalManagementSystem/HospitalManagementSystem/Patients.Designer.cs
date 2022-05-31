@@ -31,24 +31,24 @@ namespace HospitalManagementSystem
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Patients));
             this.PatientName = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
+            this.PatientNameLbl = new System.Windows.Forms.Label();
             this.PatientGender = new System.Windows.Forms.ComboBox();
             this.PatientDOB = new System.Windows.Forms.DateTimePicker();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
+            this.PatientGenderLbl = new System.Windows.Forms.Label();
+            this.PatientDOBLbl = new System.Windows.Forms.Label();
             this.PatientAddress = new System.Windows.Forms.TextBox();
-            this.label12 = new System.Windows.Forms.Label();
+            this.PatientAddressLbl = new System.Windows.Forms.Label();
             this.PatientPhone = new System.Windows.Forms.TextBox();
-            this.label13 = new System.Windows.Forms.Label();
+            this.PatientPhoneLbl = new System.Windows.Forms.Label();
             this.PatientCovidTest = new System.Windows.Forms.ComboBox();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
+            this.PatientCovidTestLbl = new System.Windows.Forms.Label();
+            this.PatientAllergiesLbl = new System.Windows.Forms.Label();
             this.PatientAllergies = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.pictureBox9 = new System.Windows.Forms.PictureBox();
-            this.ReturnHome = new System.Windows.Forms.Label();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.label4 = new System.Windows.Forms.Label();
+            this.ReturnHomeImg = new System.Windows.Forms.PictureBox();
+            this.ReturnHomeLbl = new System.Windows.Forms.Label();
+            this.PatientSideImg = new System.Windows.Forms.PictureBox();
+            this.PatientSideLbl = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.TestsNumber = new System.Windows.Forms.Label();
@@ -61,15 +61,17 @@ namespace HospitalManagementSystem
             this.EditPatient = new System.Windows.Forms.Button();
             this.DeletePatient = new System.Windows.Forms.Button();
             this.Exit = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.PatientCheckInDateLbl = new System.Windows.Forms.Label();
             this.PatientCheckInDate = new System.Windows.Forms.DateTimePicker();
-            this.label2 = new System.Windows.Forms.Label();
+            this.PatientCheckOutDateLbl = new System.Windows.Forms.Label();
             this.PatientCheckOutDate = new System.Windows.Forms.DateTimePicker();
             this.PatientDaysInHospital = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
+            this.PatientDaysInHospitalLbl = new System.Windows.Forms.Label();
+            this.PatientAgeLbl = new System.Windows.Forms.Label();
+            this.PatientAge = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ReturnHomeImg)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PatientSideImg)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -87,17 +89,17 @@ namespace HospitalManagementSystem
             this.PatientName.Size = new System.Drawing.Size(205, 30);
             this.PatientName.TabIndex = 1;
             // 
-            // label9
+            // PatientNameLbl
             // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(218, 14);
-            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(125, 23);
-            this.label9.TabIndex = 7;
-            this.label9.Text = "Nume pacient";
-            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.PatientNameLbl.AutoSize = true;
+            this.PatientNameLbl.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PatientNameLbl.Location = new System.Drawing.Point(218, 14);
+            this.PatientNameLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.PatientNameLbl.Name = "PatientNameLbl";
+            this.PatientNameLbl.Size = new System.Drawing.Size(125, 23);
+            this.PatientNameLbl.TabIndex = 7;
+            this.PatientNameLbl.Text = "Nume pacient";
+            this.PatientNameLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // PatientGender
             // 
@@ -116,30 +118,31 @@ namespace HospitalManagementSystem
             this.PatientDOB.Name = "PatientDOB";
             this.PatientDOB.Size = new System.Drawing.Size(205, 30);
             this.PatientDOB.TabIndex = 3;
+            this.PatientDOB.ValueChanged += new System.EventHandler(this.PatientDOB_ValueChanged);
             // 
-            // label10
+            // PatientGenderLbl
             // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(429, 14);
-            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(107, 23);
-            this.label10.TabIndex = 11;
-            this.label10.Text = "Sex pacient";
-            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.PatientGenderLbl.AutoSize = true;
+            this.PatientGenderLbl.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PatientGenderLbl.Location = new System.Drawing.Point(429, 14);
+            this.PatientGenderLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.PatientGenderLbl.Name = "PatientGenderLbl";
+            this.PatientGenderLbl.Size = new System.Drawing.Size(107, 23);
+            this.PatientGenderLbl.TabIndex = 11;
+            this.PatientGenderLbl.Text = "Sex pacient";
+            this.PatientGenderLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label11
+            // PatientDOBLbl
             // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(656, 14);
-            this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(119, 23);
-            this.label11.TabIndex = 12;
-            this.label11.Text = "Data nasterii";
-            this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.PatientDOBLbl.AutoSize = true;
+            this.PatientDOBLbl.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PatientDOBLbl.Location = new System.Drawing.Point(656, 14);
+            this.PatientDOBLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.PatientDOBLbl.Name = "PatientDOBLbl";
+            this.PatientDOBLbl.Size = new System.Drawing.Size(119, 23);
+            this.PatientDOBLbl.TabIndex = 12;
+            this.PatientDOBLbl.Text = "Data nasterii";
+            this.PatientDOBLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // PatientAddress
             // 
@@ -148,39 +151,39 @@ namespace HospitalManagementSystem
             this.PatientAddress.Multiline = true;
             this.PatientAddress.Name = "PatientAddress";
             this.PatientAddress.Size = new System.Drawing.Size(205, 102);
-            this.PatientAddress.TabIndex = 5;
+            this.PatientAddress.TabIndex = 4;
             // 
-            // label12
+            // PatientAddressLbl
             // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(216, 84);
-            this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(70, 23);
-            this.label12.TabIndex = 14;
-            this.label12.Text = "Adresa";
-            this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.PatientAddressLbl.AutoSize = true;
+            this.PatientAddressLbl.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PatientAddressLbl.Location = new System.Drawing.Point(216, 84);
+            this.PatientAddressLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.PatientAddressLbl.Name = "PatientAddressLbl";
+            this.PatientAddressLbl.Size = new System.Drawing.Size(70, 23);
+            this.PatientAddressLbl.TabIndex = 14;
+            this.PatientAddressLbl.Text = "Adresa";
+            this.PatientAddressLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // PatientPhone
             // 
-            this.PatientPhone.Location = new System.Drawing.Point(886, 41);
+            this.PatientPhone.Location = new System.Drawing.Point(886, 110);
             this.PatientPhone.Margin = new System.Windows.Forms.Padding(4);
             this.PatientPhone.Name = "PatientPhone";
             this.PatientPhone.Size = new System.Drawing.Size(205, 30);
-            this.PatientPhone.TabIndex = 4;
+            this.PatientPhone.TabIndex = 7;
             // 
-            // label13
+            // PatientPhoneLbl
             // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(882, 14);
-            this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(73, 23);
-            this.label13.TabIndex = 15;
-            this.label13.Text = "Telefon";
-            this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.PatientPhoneLbl.AutoSize = true;
+            this.PatientPhoneLbl.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PatientPhoneLbl.Location = new System.Drawing.Point(882, 83);
+            this.PatientPhoneLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.PatientPhoneLbl.Name = "PatientPhoneLbl";
+            this.PatientPhoneLbl.Size = new System.Drawing.Size(73, 23);
+            this.PatientPhoneLbl.TabIndex = 15;
+            this.PatientPhoneLbl.Text = "Telefon";
+            this.PatientPhoneLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // PatientCovidTest
             // 
@@ -191,31 +194,31 @@ namespace HospitalManagementSystem
             this.PatientCovidTest.Location = new System.Drawing.Point(660, 110);
             this.PatientCovidTest.Name = "PatientCovidTest";
             this.PatientCovidTest.Size = new System.Drawing.Size(205, 30);
-            this.PatientCovidTest.TabIndex = 7;
+            this.PatientCovidTest.TabIndex = 6;
             // 
-            // label14
+            // PatientCovidTestLbl
             // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(656, 84);
-            this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(133, 23);
-            this.label14.TabIndex = 18;
-            this.label14.Text = "Testat COVID";
-            this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.PatientCovidTestLbl.AutoSize = true;
+            this.PatientCovidTestLbl.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PatientCovidTestLbl.Location = new System.Drawing.Point(656, 84);
+            this.PatientCovidTestLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.PatientCovidTestLbl.Name = "PatientCovidTestLbl";
+            this.PatientCovidTestLbl.Size = new System.Drawing.Size(133, 23);
+            this.PatientCovidTestLbl.TabIndex = 18;
+            this.PatientCovidTestLbl.Text = "Testat COVID";
+            this.PatientCovidTestLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label15
+            // PatientAllergiesLbl
             // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(429, 84);
-            this.label15.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(67, 23);
-            this.label15.TabIndex = 20;
-            this.label15.Text = "Alergii";
-            this.label15.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.PatientAllergiesLbl.AutoSize = true;
+            this.PatientAllergiesLbl.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PatientAllergiesLbl.Location = new System.Drawing.Point(429, 84);
+            this.PatientAllergiesLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.PatientAllergiesLbl.Name = "PatientAllergiesLbl";
+            this.PatientAllergiesLbl.Size = new System.Drawing.Size(67, 23);
+            this.PatientAllergiesLbl.TabIndex = 20;
+            this.PatientAllergiesLbl.Text = "Alergii";
+            this.PatientAllergiesLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // PatientAllergies
             // 
@@ -224,63 +227,63 @@ namespace HospitalManagementSystem
             this.PatientAllergies.Multiline = true;
             this.PatientAllergies.Name = "PatientAllergies";
             this.PatientAllergies.Size = new System.Drawing.Size(205, 102);
-            this.PatientAllergies.TabIndex = 6;
+            this.PatientAllergies.TabIndex = 5;
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.panel1.Controls.Add(this.pictureBox9);
-            this.panel1.Controls.Add(this.ReturnHome);
-            this.panel1.Controls.Add(this.pictureBox4);
-            this.panel1.Controls.Add(this.label4);
+            this.panel1.Controls.Add(this.ReturnHomeImg);
+            this.panel1.Controls.Add(this.ReturnHomeLbl);
+            this.panel1.Controls.Add(this.PatientSideImg);
+            this.panel1.Controls.Add(this.PatientSideLbl);
             this.panel1.Location = new System.Drawing.Point(-1, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(204, 781);
             this.panel1.TabIndex = 22;
             // 
-            // pictureBox9
+            // ReturnHomeImg
             // 
-            this.pictureBox9.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox9.Image")));
-            this.pictureBox9.Location = new System.Drawing.Point(27, 715);
-            this.pictureBox9.Name = "pictureBox9";
-            this.pictureBox9.Size = new System.Drawing.Size(50, 52);
-            this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox9.TabIndex = 10;
-            this.pictureBox9.TabStop = false;
-            this.pictureBox9.Click += new System.EventHandler(this.pictureBox9_Click);
+            this.ReturnHomeImg.Image = ((System.Drawing.Image)(resources.GetObject("ReturnHomeImg.Image")));
+            this.ReturnHomeImg.Location = new System.Drawing.Point(27, 715);
+            this.ReturnHomeImg.Name = "ReturnHomeImg";
+            this.ReturnHomeImg.Size = new System.Drawing.Size(50, 52);
+            this.ReturnHomeImg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ReturnHomeImg.TabIndex = 10;
+            this.ReturnHomeImg.TabStop = false;
+            this.ReturnHomeImg.Click += new System.EventHandler(this.ReturnHomeImg_Click);
             // 
-            // ReturnHome
+            // ReturnHomeLbl
             // 
-            this.ReturnHome.AutoSize = true;
-            this.ReturnHome.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ReturnHome.Location = new System.Drawing.Point(83, 728);
-            this.ReturnHome.Name = "ReturnHome";
-            this.ReturnHome.Size = new System.Drawing.Size(61, 23);
-            this.ReturnHome.TabIndex = 11;
-            this.ReturnHome.Text = "Acasa";
-            this.ReturnHome.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.ReturnHome.Click += new System.EventHandler(this.ReturnHome_Click);
+            this.ReturnHomeLbl.AutoSize = true;
+            this.ReturnHomeLbl.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ReturnHomeLbl.Location = new System.Drawing.Point(83, 728);
+            this.ReturnHomeLbl.Name = "ReturnHomeLbl";
+            this.ReturnHomeLbl.Size = new System.Drawing.Size(61, 23);
+            this.ReturnHomeLbl.TabIndex = 11;
+            this.ReturnHomeLbl.Text = "Acasa";
+            this.ReturnHomeLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.ReturnHomeLbl.Click += new System.EventHandler(this.ReturnHomeLbl_Click);
             // 
-            // pictureBox4
+            // PatientSideImg
             // 
-            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(27, 165);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(50, 51);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox4.TabIndex = 2;
-            this.pictureBox4.TabStop = false;
+            this.PatientSideImg.Image = ((System.Drawing.Image)(resources.GetObject("PatientSideImg.Image")));
+            this.PatientSideImg.Location = new System.Drawing.Point(27, 165);
+            this.PatientSideImg.Name = "PatientSideImg";
+            this.PatientSideImg.Size = new System.Drawing.Size(50, 51);
+            this.PatientSideImg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.PatientSideImg.TabIndex = 2;
+            this.PatientSideImg.TabStop = false;
             // 
-            // label4
+            // PatientSideLbl
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(83, 181);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(78, 23);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "Pacienti";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.PatientSideLbl.AutoSize = true;
+            this.PatientSideLbl.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PatientSideLbl.Location = new System.Drawing.Point(83, 181);
+            this.PatientSideLbl.Name = "PatientSideLbl";
+            this.PatientSideLbl.Size = new System.Drawing.Size(78, 23);
+            this.PatientSideLbl.TabIndex = 3;
+            this.PatientSideLbl.Text = "Pacienti";
+            this.PatientSideLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel2
             // 
@@ -367,7 +370,7 @@ namespace HospitalManagementSystem
             this.AddPatient.Location = new System.Drawing.Point(345, 257);
             this.AddPatient.Name = "AddPatient";
             this.AddPatient.Size = new System.Drawing.Size(236, 37);
-            this.AddPatient.TabIndex = 8;
+            this.AddPatient.TabIndex = 10;
             this.AddPatient.Text = "Adaugare pacient";
             this.AddPatient.UseVisualStyleBackColor = true;
             this.AddPatient.Click += new System.EventHandler(this.AddPatient_Click);
@@ -378,7 +381,7 @@ namespace HospitalManagementSystem
             this.EditPatient.Location = new System.Drawing.Point(598, 257);
             this.EditPatient.Name = "EditPatient";
             this.EditPatient.Size = new System.Drawing.Size(236, 37);
-            this.EditPatient.TabIndex = 9;
+            this.EditPatient.TabIndex = 11;
             this.EditPatient.Text = "Editare pacient";
             this.EditPatient.UseVisualStyleBackColor = true;
             this.EditPatient.Click += new System.EventHandler(this.EditPatient_Click);
@@ -389,7 +392,7 @@ namespace HospitalManagementSystem
             this.DeletePatient.Location = new System.Drawing.Point(855, 257);
             this.DeletePatient.Name = "DeletePatient";
             this.DeletePatient.Size = new System.Drawing.Size(236, 37);
-            this.DeletePatient.TabIndex = 10;
+            this.DeletePatient.TabIndex = 12;
             this.DeletePatient.Text = "Stergere pacient";
             this.DeletePatient.UseVisualStyleBackColor = true;
             this.DeletePatient.Click += new System.EventHandler(this.DeletePatient_Click);
@@ -405,43 +408,45 @@ namespace HospitalManagementSystem
             this.Exit.TabStop = false;
             this.Exit.Click += new System.EventHandler(this.Exit_Click);
             // 
-            // label1
+            // PatientCheckInDateLbl
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(656, 155);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(134, 23);
-            this.label1.TabIndex = 30;
-            this.label1.Text = "Data internare";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.PatientCheckInDateLbl.AutoSize = true;
+            this.PatientCheckInDateLbl.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PatientCheckInDateLbl.Location = new System.Drawing.Point(656, 155);
+            this.PatientCheckInDateLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.PatientCheckInDateLbl.Name = "PatientCheckInDateLbl";
+            this.PatientCheckInDateLbl.Size = new System.Drawing.Size(134, 23);
+            this.PatientCheckInDateLbl.TabIndex = 30;
+            this.PatientCheckInDateLbl.Text = "Data internare";
+            this.PatientCheckInDateLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // PatientCheckInDate
             // 
             this.PatientCheckInDate.Location = new System.Drawing.Point(660, 182);
             this.PatientCheckInDate.Name = "PatientCheckInDate";
             this.PatientCheckInDate.Size = new System.Drawing.Size(205, 30);
-            this.PatientCheckInDate.TabIndex = 29;
+            this.PatientCheckInDate.TabIndex = 8;
+            this.PatientCheckInDate.ValueChanged += new System.EventHandler(this.PatientCheckInDate_ValueChanged);
             // 
-            // label2
+            // PatientCheckOutDateLbl
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(882, 155);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(139, 23);
-            this.label2.TabIndex = 32;
-            this.label2.Text = "Data externare";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.PatientCheckOutDateLbl.AutoSize = true;
+            this.PatientCheckOutDateLbl.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PatientCheckOutDateLbl.Location = new System.Drawing.Point(882, 155);
+            this.PatientCheckOutDateLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.PatientCheckOutDateLbl.Name = "PatientCheckOutDateLbl";
+            this.PatientCheckOutDateLbl.Size = new System.Drawing.Size(139, 23);
+            this.PatientCheckOutDateLbl.TabIndex = 32;
+            this.PatientCheckOutDateLbl.Text = "Data externare";
+            this.PatientCheckOutDateLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // PatientCheckOutDate
             // 
             this.PatientCheckOutDate.Location = new System.Drawing.Point(886, 182);
             this.PatientCheckOutDate.Name = "PatientCheckOutDate";
             this.PatientCheckOutDate.Size = new System.Drawing.Size(205, 30);
-            this.PatientCheckOutDate.TabIndex = 31;
+            this.PatientCheckOutDate.TabIndex = 9;
+            this.PatientCheckOutDate.ValueChanged += new System.EventHandler(this.PatientCheckOutDate_ValueChanged);
             // 
             // PatientDaysInHospital
             // 
@@ -449,31 +454,52 @@ namespace HospitalManagementSystem
             this.PatientDaysInHospital.Margin = new System.Windows.Forms.Padding(4);
             this.PatientDaysInHospital.Name = "PatientDaysInHospital";
             this.PatientDaysInHospital.Size = new System.Drawing.Size(98, 30);
-            this.PatientDaysInHospital.TabIndex = 33;
-            this.PatientDaysInHospital.TextChanged += new System.EventHandler(this.PatientDaysInHospital_TextChanged);
+            this.PatientDaysInHospital.TabIndex = 21;
             // 
-            // label3
+            // PatientDaysInHospitalLbl
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(1102, 155);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(125, 23);
-            this.label3.TabIndex = 34;
-            this.label3.Text = "Zile internare";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.PatientDaysInHospitalLbl.AutoSize = true;
+            this.PatientDaysInHospitalLbl.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PatientDaysInHospitalLbl.Location = new System.Drawing.Point(1102, 155);
+            this.PatientDaysInHospitalLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.PatientDaysInHospitalLbl.Name = "PatientDaysInHospitalLbl";
+            this.PatientDaysInHospitalLbl.Size = new System.Drawing.Size(125, 23);
+            this.PatientDaysInHospitalLbl.TabIndex = 34;
+            this.PatientDaysInHospitalLbl.Text = "Zile internare";
+            this.PatientDaysInHospitalLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // PatientAgeLbl
+            // 
+            this.PatientAgeLbl.AutoSize = true;
+            this.PatientAgeLbl.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PatientAgeLbl.Location = new System.Drawing.Point(882, 14);
+            this.PatientAgeLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.PatientAgeLbl.Name = "PatientAgeLbl";
+            this.PatientAgeLbl.Size = new System.Drawing.Size(131, 23);
+            this.PatientAgeLbl.TabIndex = 36;
+            this.PatientAgeLbl.Text = "Varsta pacient";
+            this.PatientAgeLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // PatientAge
+            // 
+            this.PatientAge.Location = new System.Drawing.Point(886, 40);
+            this.PatientAge.Margin = new System.Windows.Forms.Padding(4);
+            this.PatientAge.Name = "PatientAge";
+            this.PatientAge.Size = new System.Drawing.Size(127, 30);
+            this.PatientAge.TabIndex = 20;
             // 
             // Patients
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1224, 796);
-            this.Controls.Add(this.label3);
+            this.Controls.Add(this.PatientAgeLbl);
+            this.Controls.Add(this.PatientAge);
+            this.Controls.Add(this.PatientDaysInHospitalLbl);
             this.Controls.Add(this.PatientDaysInHospital);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.PatientCheckOutDateLbl);
             this.Controls.Add(this.PatientCheckOutDate);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.PatientCheckInDateLbl);
             this.Controls.Add(this.PatientCheckInDate);
             this.Controls.Add(this.Exit);
             this.Controls.Add(this.DeletePatient);
@@ -482,20 +508,20 @@ namespace HospitalManagementSystem
             this.Controls.Add(this.PatientsDGV);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.label15);
+            this.Controls.Add(this.PatientAllergiesLbl);
             this.Controls.Add(this.PatientAllergies);
-            this.Controls.Add(this.label14);
+            this.Controls.Add(this.PatientCovidTestLbl);
             this.Controls.Add(this.PatientCovidTest);
             this.Controls.Add(this.PatientPhone);
-            this.Controls.Add(this.label13);
-            this.Controls.Add(this.label12);
+            this.Controls.Add(this.PatientPhoneLbl);
+            this.Controls.Add(this.PatientAddressLbl);
             this.Controls.Add(this.PatientAddress);
-            this.Controls.Add(this.label11);
-            this.Controls.Add(this.label10);
+            this.Controls.Add(this.PatientDOBLbl);
+            this.Controls.Add(this.PatientGenderLbl);
             this.Controls.Add(this.PatientDOB);
             this.Controls.Add(this.PatientGender);
             this.Controls.Add(this.PatientName);
-            this.Controls.Add(this.label9);
+            this.Controls.Add(this.PatientNameLbl);
             this.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4);
@@ -505,8 +531,8 @@ namespace HospitalManagementSystem
             this.Load += new System.EventHandler(this.Patients_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ReturnHomeImg)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PatientSideImg)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
@@ -523,24 +549,24 @@ namespace HospitalManagementSystem
 
         #endregion
         private System.Windows.Forms.TextBox PatientName;
-        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label PatientNameLbl;
         private System.Windows.Forms.ComboBox PatientGender;
         private System.Windows.Forms.DateTimePicker PatientDOB;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label PatientGenderLbl;
+        private System.Windows.Forms.Label PatientDOBLbl;
         private System.Windows.Forms.TextBox PatientAddress;
-        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label PatientAddressLbl;
         private System.Windows.Forms.TextBox PatientPhone;
-        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label PatientPhoneLbl;
         private System.Windows.Forms.ComboBox PatientCovidTest;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label PatientCovidTestLbl;
+        private System.Windows.Forms.Label PatientAllergiesLbl;
         private System.Windows.Forms.TextBox PatientAllergies;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.PictureBox pictureBox9;
-        private System.Windows.Forms.Label ReturnHome;
-        private System.Windows.Forms.PictureBox pictureBox4;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.PictureBox ReturnHomeImg;
+        private System.Windows.Forms.Label ReturnHomeLbl;
+        private System.Windows.Forms.PictureBox PatientSideImg;
+        private System.Windows.Forms.Label PatientSideLbl;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label TestsNumber;
@@ -553,11 +579,13 @@ namespace HospitalManagementSystem
         private System.Windows.Forms.Button EditPatient;
         private System.Windows.Forms.Button DeletePatient;
         private System.Windows.Forms.PictureBox Exit;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label PatientCheckInDateLbl;
         private System.Windows.Forms.DateTimePicker PatientCheckInDate;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label PatientCheckOutDateLbl;
         private System.Windows.Forms.DateTimePicker PatientCheckOutDate;
         private System.Windows.Forms.TextBox PatientDaysInHospital;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label PatientDaysInHospitalLbl;
+        private System.Windows.Forms.Label PatientAgeLbl;
+        private System.Windows.Forms.TextBox PatientAge;
     }
 }

@@ -185,7 +185,7 @@ namespace HospitalManagementSystem
             Application.Exit();
         }
 
-        private void ReturnHome_Click(object sender, EventArgs e)
+        private void ReturnHomeLbl_Click(object sender, EventArgs e)
         {
             Homes obj = new Homes();
             obj.Show();
@@ -213,7 +213,7 @@ namespace HospitalManagementSystem
             }
         }
 
-        private void pictureBox9_Click(object sender, EventArgs e)
+        private void ReturnHomeImg_Click(object sender, EventArgs e)
         {
             Homes obj = new Homes();
             obj.Show();

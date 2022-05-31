@@ -30,7 +30,7 @@ namespace HospitalManagementSystem
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Doctors));
-            this.pictureBox9 = new System.Windows.Forms.PictureBox();
+            this.ReturnHomeImg = new System.Windows.Forms.PictureBox();
             this.EditDoctor = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -41,29 +41,29 @@ namespace HospitalManagementSystem
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.AddDoctor = new System.Windows.Forms.Button();
             this.DoctorsDGV = new System.Windows.Forms.DataGridView();
-            this.ReturnHome = new System.Windows.Forms.Label();
+            this.ReturnHomeLbl = new System.Windows.Forms.Label();
             this.DeleteDoctor = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
+            this.DoctorSideImg = new System.Windows.Forms.PictureBox();
+            this.DoctorSideLbl = new System.Windows.Forms.Label();
+            this.DoctorExpLbl = new System.Windows.Forms.Label();
             this.DoctorExp = new System.Windows.Forms.TextBox();
-            this.label14 = new System.Windows.Forms.Label();
+            this.DoctorCovidTestLbl = new System.Windows.Forms.Label();
             this.DoctorCovidTest = new System.Windows.Forms.ComboBox();
             this.DoctorPhone = new System.Windows.Forms.TextBox();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
+            this.DoctorPhoneLbl = new System.Windows.Forms.Label();
+            this.DoctorAddressLbl = new System.Windows.Forms.Label();
             this.DoctorAddress = new System.Windows.Forms.TextBox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
+            this.DoctorDOBLbl = new System.Windows.Forms.Label();
+            this.DoctorSpecLbl = new System.Windows.Forms.Label();
             this.DoctorDOB = new System.Windows.Forms.DateTimePicker();
             this.DoctorSpec = new System.Windows.Forms.ComboBox();
-            this.label9 = new System.Windows.Forms.Label();
+            this.DoctorNameLbl = new System.Windows.Forms.Label();
             this.DoctorName = new System.Windows.Forms.TextBox();
             this.DoctorPassword = new System.Windows.Forms.TextBox();
-            this.label16 = new System.Windows.Forms.Label();
+            this.DoctorPasswordLbl = new System.Windows.Forms.Label();
             this.Exit = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ReturnHomeImg)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -71,20 +71,20 @@ namespace HospitalManagementSystem
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DoctorsDGV)).BeginInit();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DoctorSideImg)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Exit)).BeginInit();
             this.SuspendLayout();
             // 
-            // pictureBox9
+            // ReturnHomeImg
             // 
-            this.pictureBox9.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox9.Image")));
-            this.pictureBox9.Location = new System.Drawing.Point(27, 715);
-            this.pictureBox9.Name = "pictureBox9";
-            this.pictureBox9.Size = new System.Drawing.Size(50, 52);
-            this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox9.TabIndex = 10;
-            this.pictureBox9.TabStop = false;
-            this.pictureBox9.Click += new System.EventHandler(this.pictureBox9_Click);
+            this.ReturnHomeImg.Image = ((System.Drawing.Image)(resources.GetObject("ReturnHomeImg.Image")));
+            this.ReturnHomeImg.Location = new System.Drawing.Point(27, 715);
+            this.ReturnHomeImg.Name = "ReturnHomeImg";
+            this.ReturnHomeImg.Size = new System.Drawing.Size(50, 52);
+            this.ReturnHomeImg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ReturnHomeImg.TabIndex = 10;
+            this.ReturnHomeImg.TabStop = false;
+            this.ReturnHomeImg.Click += new System.EventHandler(this.ReturnHomeImg_Click);
             // 
             // EditDoctor
             // 
@@ -187,17 +187,17 @@ namespace HospitalManagementSystem
             this.DoctorsDGV.TabIndex = 12;
             this.DoctorsDGV.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DoctorsDGV_CellClick);
             // 
-            // ReturnHome
+            // ReturnHomeLbl
             // 
-            this.ReturnHome.AutoSize = true;
-            this.ReturnHome.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ReturnHome.Location = new System.Drawing.Point(83, 729);
-            this.ReturnHome.Name = "ReturnHome";
-            this.ReturnHome.Size = new System.Drawing.Size(61, 23);
-            this.ReturnHome.TabIndex = 11;
-            this.ReturnHome.Text = "Acasa";
-            this.ReturnHome.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.ReturnHome.Click += new System.EventHandler(this.ReturnHome_Click);
+            this.ReturnHomeLbl.AutoSize = true;
+            this.ReturnHomeLbl.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ReturnHomeLbl.Location = new System.Drawing.Point(83, 729);
+            this.ReturnHomeLbl.Name = "ReturnHomeLbl";
+            this.ReturnHomeLbl.Size = new System.Drawing.Size(61, 23);
+            this.ReturnHomeLbl.TabIndex = 11;
+            this.ReturnHomeLbl.Text = "Acasa";
+            this.ReturnHomeLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.ReturnHomeLbl.Click += new System.EventHandler(this.ReturnHomeLbl_Click);
             // 
             // DeleteDoctor
             // 
@@ -213,47 +213,47 @@ namespace HospitalManagementSystem
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.panel1.Controls.Add(this.pictureBox9);
-            this.panel1.Controls.Add(this.ReturnHome);
-            this.panel1.Controls.Add(this.pictureBox6);
-            this.panel1.Controls.Add(this.label5);
+            this.panel1.Controls.Add(this.ReturnHomeImg);
+            this.panel1.Controls.Add(this.ReturnHomeLbl);
+            this.panel1.Controls.Add(this.DoctorSideImg);
+            this.panel1.Controls.Add(this.DoctorSideLbl);
             this.panel1.Location = new System.Drawing.Point(3, 8);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(204, 781);
             this.panel1.TabIndex = 42;
             // 
-            // pictureBox6
+            // DoctorSideImg
             // 
-            this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
-            this.pictureBox6.Location = new System.Drawing.Point(27, 222);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(50, 51);
-            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox6.TabIndex = 4;
-            this.pictureBox6.TabStop = false;
+            this.DoctorSideImg.Image = ((System.Drawing.Image)(resources.GetObject("DoctorSideImg.Image")));
+            this.DoctorSideImg.Location = new System.Drawing.Point(27, 222);
+            this.DoctorSideImg.Name = "DoctorSideImg";
+            this.DoctorSideImg.Size = new System.Drawing.Size(50, 51);
+            this.DoctorSideImg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.DoctorSideImg.TabIndex = 4;
+            this.DoctorSideImg.TabStop = false;
             // 
-            // label5
+            // DoctorSideLbl
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(83, 238);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(73, 23);
-            this.label5.TabIndex = 5;
-            this.label5.Text = "Doctori";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.DoctorSideLbl.AutoSize = true;
+            this.DoctorSideLbl.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DoctorSideLbl.Location = new System.Drawing.Point(83, 238);
+            this.DoctorSideLbl.Name = "DoctorSideLbl";
+            this.DoctorSideLbl.Size = new System.Drawing.Size(73, 23);
+            this.DoctorSideLbl.TabIndex = 5;
+            this.DoctorSideLbl.Text = "Doctori";
+            this.DoctorSideLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label15
+            // DoctorExpLbl
             // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(433, 92);
-            this.label15.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(103, 23);
-            this.label15.TabIndex = 41;
-            this.label15.Text = "Experienta";
-            this.label15.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.DoctorExpLbl.AutoSize = true;
+            this.DoctorExpLbl.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DoctorExpLbl.Location = new System.Drawing.Point(433, 92);
+            this.DoctorExpLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.DoctorExpLbl.Name = "DoctorExpLbl";
+            this.DoctorExpLbl.Size = new System.Drawing.Size(103, 23);
+            this.DoctorExpLbl.TabIndex = 41;
+            this.DoctorExpLbl.Text = "Experienta";
+            this.DoctorExpLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // DoctorExp
             // 
@@ -264,17 +264,17 @@ namespace HospitalManagementSystem
             this.DoctorExp.Size = new System.Drawing.Size(205, 102);
             this.DoctorExp.TabIndex = 6;
             // 
-            // label14
+            // DoctorCovidTestLbl
             // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(660, 92);
-            this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(133, 23);
-            this.label14.TabIndex = 39;
-            this.label14.Text = "Testat COVID";
-            this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.DoctorCovidTestLbl.AutoSize = true;
+            this.DoctorCovidTestLbl.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DoctorCovidTestLbl.Location = new System.Drawing.Point(660, 92);
+            this.DoctorCovidTestLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.DoctorCovidTestLbl.Name = "DoctorCovidTestLbl";
+            this.DoctorCovidTestLbl.Size = new System.Drawing.Size(133, 23);
+            this.DoctorCovidTestLbl.TabIndex = 39;
+            this.DoctorCovidTestLbl.Text = "Testat COVID";
+            this.DoctorCovidTestLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // DoctorCovidTest
             // 
@@ -295,29 +295,29 @@ namespace HospitalManagementSystem
             this.DoctorPhone.Size = new System.Drawing.Size(205, 30);
             this.DoctorPhone.TabIndex = 4;
             // 
-            // label13
+            // DoctorPhoneLbl
             // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(886, 22);
-            this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(73, 23);
-            this.label13.TabIndex = 36;
-            this.label13.Text = "Telefon";
-            this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.DoctorPhoneLbl.AutoSize = true;
+            this.DoctorPhoneLbl.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DoctorPhoneLbl.Location = new System.Drawing.Point(886, 22);
+            this.DoctorPhoneLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.DoctorPhoneLbl.Name = "DoctorPhoneLbl";
+            this.DoctorPhoneLbl.Size = new System.Drawing.Size(73, 23);
+            this.DoctorPhoneLbl.TabIndex = 36;
+            this.DoctorPhoneLbl.Text = "Telefon";
+            this.DoctorPhoneLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label12
+            // DoctorAddressLbl
             // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(220, 92);
-            this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(70, 23);
-            this.label12.TabIndex = 35;
-            this.label12.Text = "Adresa";
-            this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.DoctorAddressLbl.AutoSize = true;
+            this.DoctorAddressLbl.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DoctorAddressLbl.Location = new System.Drawing.Point(220, 92);
+            this.DoctorAddressLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.DoctorAddressLbl.Name = "DoctorAddressLbl";
+            this.DoctorAddressLbl.Size = new System.Drawing.Size(70, 23);
+            this.DoctorAddressLbl.TabIndex = 35;
+            this.DoctorAddressLbl.Text = "Adresa";
+            this.DoctorAddressLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // DoctorAddress
             // 
@@ -328,29 +328,29 @@ namespace HospitalManagementSystem
             this.DoctorAddress.Size = new System.Drawing.Size(205, 102);
             this.DoctorAddress.TabIndex = 5;
             // 
-            // label11
+            // DoctorDOBLbl
             // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(660, 22);
-            this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(119, 23);
-            this.label11.TabIndex = 33;
-            this.label11.Text = "Data nasterii";
-            this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.DoctorDOBLbl.AutoSize = true;
+            this.DoctorDOBLbl.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DoctorDOBLbl.Location = new System.Drawing.Point(660, 22);
+            this.DoctorDOBLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.DoctorDOBLbl.Name = "DoctorDOBLbl";
+            this.DoctorDOBLbl.Size = new System.Drawing.Size(119, 23);
+            this.DoctorDOBLbl.TabIndex = 33;
+            this.DoctorDOBLbl.Text = "Data nasterii";
+            this.DoctorDOBLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label10
+            // DoctorSpecLbl
             // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(434, 22);
-            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(113, 23);
-            this.label10.TabIndex = 32;
-            this.label10.Text = "Specializare";
-            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.DoctorSpecLbl.AutoSize = true;
+            this.DoctorSpecLbl.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DoctorSpecLbl.Location = new System.Drawing.Point(434, 22);
+            this.DoctorSpecLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.DoctorSpecLbl.Name = "DoctorSpecLbl";
+            this.DoctorSpecLbl.Size = new System.Drawing.Size(113, 23);
+            this.DoctorSpecLbl.TabIndex = 32;
+            this.DoctorSpecLbl.Text = "Specializare";
+            this.DoctorSpecLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // DoctorDOB
             // 
@@ -374,17 +374,17 @@ namespace HospitalManagementSystem
             this.DoctorSpec.Size = new System.Drawing.Size(205, 30);
             this.DoctorSpec.TabIndex = 2;
             // 
-            // label9
+            // DoctorNameLbl
             // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(220, 22);
-            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(118, 23);
-            this.label9.TabIndex = 28;
-            this.label9.Text = "Nume doctor";
-            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.DoctorNameLbl.AutoSize = true;
+            this.DoctorNameLbl.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DoctorNameLbl.Location = new System.Drawing.Point(220, 22);
+            this.DoctorNameLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.DoctorNameLbl.Name = "DoctorNameLbl";
+            this.DoctorNameLbl.Size = new System.Drawing.Size(118, 23);
+            this.DoctorNameLbl.TabIndex = 28;
+            this.DoctorNameLbl.Text = "Nume doctor";
+            this.DoctorNameLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // DoctorName
             // 
@@ -402,17 +402,17 @@ namespace HospitalManagementSystem
             this.DoctorPassword.Size = new System.Drawing.Size(205, 30);
             this.DoctorPassword.TabIndex = 8;
             // 
-            // label16
+            // DoctorPasswordLbl
             // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(887, 92);
-            this.label16.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(65, 23);
-            this.label16.TabIndex = 48;
-            this.label16.Text = "Parola";
-            this.label16.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.DoctorPasswordLbl.AutoSize = true;
+            this.DoctorPasswordLbl.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DoctorPasswordLbl.Location = new System.Drawing.Point(887, 92);
+            this.DoctorPasswordLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.DoctorPasswordLbl.Name = "DoctorPasswordLbl";
+            this.DoctorPasswordLbl.Size = new System.Drawing.Size(65, 23);
+            this.DoctorPasswordLbl.TabIndex = 48;
+            this.DoctorPasswordLbl.Text = "Parola";
+            this.DoctorPasswordLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Exit
             // 
@@ -432,26 +432,26 @@ namespace HospitalManagementSystem
             this.ClientSize = new System.Drawing.Size(1224, 796);
             this.Controls.Add(this.Exit);
             this.Controls.Add(this.DoctorPassword);
-            this.Controls.Add(this.label16);
+            this.Controls.Add(this.DoctorPasswordLbl);
             this.Controls.Add(this.EditDoctor);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.AddDoctor);
             this.Controls.Add(this.DoctorsDGV);
             this.Controls.Add(this.DeleteDoctor);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.label15);
+            this.Controls.Add(this.DoctorExpLbl);
             this.Controls.Add(this.DoctorExp);
-            this.Controls.Add(this.label14);
+            this.Controls.Add(this.DoctorCovidTestLbl);
             this.Controls.Add(this.DoctorCovidTest);
             this.Controls.Add(this.DoctorPhone);
-            this.Controls.Add(this.label13);
-            this.Controls.Add(this.label12);
+            this.Controls.Add(this.DoctorPhoneLbl);
+            this.Controls.Add(this.DoctorAddressLbl);
             this.Controls.Add(this.DoctorAddress);
-            this.Controls.Add(this.label11);
-            this.Controls.Add(this.label10);
+            this.Controls.Add(this.DoctorDOBLbl);
+            this.Controls.Add(this.DoctorSpecLbl);
             this.Controls.Add(this.DoctorDOB);
             this.Controls.Add(this.DoctorSpec);
-            this.Controls.Add(this.label9);
+            this.Controls.Add(this.DoctorNameLbl);
             this.Controls.Add(this.DoctorName);
             this.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -460,7 +460,7 @@ namespace HospitalManagementSystem
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Doctors";
             this.Load += new System.EventHandler(this.Doctors_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ReturnHomeImg)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
@@ -471,7 +471,7 @@ namespace HospitalManagementSystem
             ((System.ComponentModel.ISupportInitialize)(this.DoctorsDGV)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DoctorSideImg)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Exit)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -480,7 +480,7 @@ namespace HospitalManagementSystem
 
         #endregion
 
-        private System.Windows.Forms.PictureBox pictureBox9;
+        private System.Windows.Forms.PictureBox ReturnHomeImg;
         private System.Windows.Forms.Button EditDoctor;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel4;
@@ -491,27 +491,27 @@ namespace HospitalManagementSystem
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Button AddDoctor;
         private System.Windows.Forms.DataGridView DoctorsDGV;
-        private System.Windows.Forms.Label ReturnHome;
+        private System.Windows.Forms.Label ReturnHomeLbl;
         private System.Windows.Forms.Button DeleteDoctor;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.PictureBox pictureBox6;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.PictureBox DoctorSideImg;
+        private System.Windows.Forms.Label DoctorSideLbl;
+        private System.Windows.Forms.Label DoctorExpLbl;
         private System.Windows.Forms.TextBox DoctorExp;
-        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label DoctorCovidTestLbl;
         private System.Windows.Forms.ComboBox DoctorCovidTest;
         private System.Windows.Forms.TextBox DoctorPhone;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label DoctorPhoneLbl;
+        private System.Windows.Forms.Label DoctorAddressLbl;
         private System.Windows.Forms.TextBox DoctorAddress;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label DoctorDOBLbl;
+        private System.Windows.Forms.Label DoctorSpecLbl;
         private System.Windows.Forms.DateTimePicker DoctorDOB;
         private System.Windows.Forms.ComboBox DoctorSpec;
-        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label DoctorNameLbl;
         private System.Windows.Forms.TextBox DoctorName;
         private System.Windows.Forms.TextBox DoctorPassword;
-        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label DoctorPasswordLbl;
         private System.Windows.Forms.PictureBox Exit;
     }
 }

@@ -107,35 +107,35 @@ namespace HospitalManagementSystem
             this.Hide();
         }
 
-        private void recepImg_Click(object sender, EventArgs e)
+        private void ReceptionistsImg_Click(object sender, EventArgs e)
         {
             Receptionists obj = new Receptionists();
             obj.Show();
             this.Hide();
         }
 
-        private void testsImg_Click(object sender, EventArgs e)
+        private void LabTestsImg_Click(object sender, EventArgs e)
         {
             LabTests obj = new LabTests();
             obj.Show();
             this.Hide();
         }
 
-        private void pictureBox4_Click(object sender, EventArgs e)
+        private void PrescripImg_Click(object sender, EventArgs e)
         {
             Prescriptions obj = new Prescriptions();
             obj.Show();
             this.Hide();
         }
 
-        private void imageDoctor_Click(object sender, EventArgs e)
+        private void DoctorsImg_Click(object sender, EventArgs e)
         {
             Doctors obj = new Doctors();
             obj.Show();
             this.Hide();
         }
 
-        private void patientsImg_Click(object sender, EventArgs e)
+        private void PatientsImg_Click(object sender, EventArgs e)
         {
             Patients obj = new Patients();
             obj.Show();

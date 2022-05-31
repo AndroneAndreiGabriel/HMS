@@ -31,10 +31,10 @@ namespace HospitalManagementSystem
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LabTests));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.pictureBox9 = new System.Windows.Forms.PictureBox();
-            this.ReturnHome = new System.Windows.Forms.Label();
+            this.LabTestsImg = new System.Windows.Forms.PictureBox();
+            this.LabTestsLbl = new System.Windows.Forms.Label();
+            this.ReturnHomeImg = new System.Windows.Forms.PictureBox();
+            this.ReturnHomeLbl = new System.Windows.Forms.Label();
             this.TestName = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.TestCost = new System.Windows.Forms.TextBox();
@@ -45,8 +45,8 @@ namespace HospitalManagementSystem
             this.EditTest = new System.Windows.Forms.Button();
             this.Exit = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LabTestsImg)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ReturnHomeImg)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TestsDGV)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Exit)).BeginInit();
             this.SuspendLayout();
@@ -54,58 +54,58 @@ namespace HospitalManagementSystem
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.pictureBox9);
-            this.panel1.Controls.Add(this.ReturnHome);
+            this.panel1.Controls.Add(this.LabTestsImg);
+            this.panel1.Controls.Add(this.LabTestsLbl);
+            this.panel1.Controls.Add(this.ReturnHomeImg);
+            this.panel1.Controls.Add(this.ReturnHomeLbl);
             this.panel1.Location = new System.Drawing.Point(1, 1);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(204, 781);
             this.panel1.TabIndex = 43;
             // 
-            // pictureBox1
+            // LabTestsImg
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(33, 289);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(50, 51);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 53;
-            this.pictureBox1.TabStop = false;
+            this.LabTestsImg.Image = ((System.Drawing.Image)(resources.GetObject("LabTestsImg.Image")));
+            this.LabTestsImg.Location = new System.Drawing.Point(33, 289);
+            this.LabTestsImg.Name = "LabTestsImg";
+            this.LabTestsImg.Size = new System.Drawing.Size(50, 51);
+            this.LabTestsImg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.LabTestsImg.TabIndex = 53;
+            this.LabTestsImg.TabStop = false;
             // 
-            // label2
+            // LabTestsLbl
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(89, 305);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(74, 23);
-            this.label2.TabIndex = 54;
-            this.label2.Text = "Analize";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.LabTestsLbl.AutoSize = true;
+            this.LabTestsLbl.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LabTestsLbl.Location = new System.Drawing.Point(89, 305);
+            this.LabTestsLbl.Name = "LabTestsLbl";
+            this.LabTestsLbl.Size = new System.Drawing.Size(74, 23);
+            this.LabTestsLbl.TabIndex = 54;
+            this.LabTestsLbl.Text = "Analize";
+            this.LabTestsLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // pictureBox9
+            // ReturnHomeImg
             // 
-            this.pictureBox9.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox9.Image")));
-            this.pictureBox9.Location = new System.Drawing.Point(27, 715);
-            this.pictureBox9.Name = "pictureBox9";
-            this.pictureBox9.Size = new System.Drawing.Size(50, 52);
-            this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox9.TabIndex = 10;
-            this.pictureBox9.TabStop = false;
-            this.pictureBox9.Click += new System.EventHandler(this.pictureBox9_Click);
+            this.ReturnHomeImg.Image = ((System.Drawing.Image)(resources.GetObject("ReturnHomeImg.Image")));
+            this.ReturnHomeImg.Location = new System.Drawing.Point(27, 715);
+            this.ReturnHomeImg.Name = "ReturnHomeImg";
+            this.ReturnHomeImg.Size = new System.Drawing.Size(50, 52);
+            this.ReturnHomeImg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ReturnHomeImg.TabIndex = 10;
+            this.ReturnHomeImg.TabStop = false;
+            this.ReturnHomeImg.Click += new System.EventHandler(this.ReturnHomeImg_Click);
             // 
-            // ReturnHome
+            // ReturnHomeLbl
             // 
-            this.ReturnHome.AutoSize = true;
-            this.ReturnHome.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ReturnHome.Location = new System.Drawing.Point(83, 729);
-            this.ReturnHome.Name = "ReturnHome";
-            this.ReturnHome.Size = new System.Drawing.Size(61, 23);
-            this.ReturnHome.TabIndex = 11;
-            this.ReturnHome.Text = "Acasa";
-            this.ReturnHome.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.ReturnHome.Click += new System.EventHandler(this.ReturnHome_Click);
+            this.ReturnHomeLbl.AutoSize = true;
+            this.ReturnHomeLbl.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ReturnHomeLbl.Location = new System.Drawing.Point(83, 729);
+            this.ReturnHomeLbl.Name = "ReturnHomeLbl";
+            this.ReturnHomeLbl.Size = new System.Drawing.Size(61, 23);
+            this.ReturnHomeLbl.TabIndex = 11;
+            this.ReturnHomeLbl.Text = "Acasa";
+            this.ReturnHomeLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.ReturnHomeLbl.Click += new System.EventHandler(this.ReturnHomeLbl_Click);
             // 
             // TestName
             // 
@@ -225,8 +225,8 @@ namespace HospitalManagementSystem
             this.Text = "LabTests";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LabTestsImg)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ReturnHomeImg)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TestsDGV)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Exit)).EndInit();
             this.ResumeLayout(false);
@@ -237,8 +237,8 @@ namespace HospitalManagementSystem
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.PictureBox pictureBox9;
-        private System.Windows.Forms.Label ReturnHome;
+        private System.Windows.Forms.PictureBox ReturnHomeImg;
+        private System.Windows.Forms.Label ReturnHomeLbl;
         private System.Windows.Forms.TextBox TestName;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox TestCost;
@@ -248,7 +248,7 @@ namespace HospitalManagementSystem
         private System.Windows.Forms.Button DeleteTest;
         private System.Windows.Forms.Button EditTest;
         private System.Windows.Forms.PictureBox Exit;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.PictureBox LabTestsImg;
+        private System.Windows.Forms.Label LabTestsLbl;
     }
 }

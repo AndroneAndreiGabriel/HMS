@@ -34,39 +34,39 @@ namespace HospitalManagementSystem
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.TestsNumber = new System.Windows.Forms.Label();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.LabTestsBox = new System.Windows.Forms.PictureBox();
             this.panel6 = new System.Windows.Forms.Panel();
             this.DoctorsNumber = new System.Windows.Forms.Label();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.DoctorBox = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.PatientsNumber = new System.Windows.Forms.Label();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.PatientBox = new System.Windows.Forms.PictureBox();
             this.PatientsLbl = new System.Windows.Forms.Label();
-            this.patientsImg = new System.Windows.Forms.PictureBox();
+            this.PatientsImg = new System.Windows.Forms.PictureBox();
             this.DoctorsLbl = new System.Windows.Forms.Label();
-            this.imageDoctor = new System.Windows.Forms.PictureBox();
+            this.DoctorsImg = new System.Windows.Forms.PictureBox();
             this.LabTestsLbl = new System.Windows.Forms.Label();
-            this.testsImg = new System.Windows.Forms.PictureBox();
+            this.LabTestsImg = new System.Windows.Forms.PictureBox();
             this.ReceptionistsLbl = new System.Windows.Forms.Label();
-            this.recepImg = new System.Windows.Forms.PictureBox();
+            this.ReceptionistsImg = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.PrescripImg = new System.Windows.Forms.PictureBox();
             this.PrescripLbl = new System.Windows.Forms.Label();
             this.Exit = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LabTestsBox)).BeginInit();
             this.panel6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DoctorBox)).BeginInit();
             this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.patientsImg)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imageDoctor)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.testsImg)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.recepImg)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PatientBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PatientsImg)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DoctorsImg)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LabTestsImg)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ReceptionistsImg)).BeginInit();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PrescripImg)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Exit)).BeginInit();
             this.SuspendLayout();
             // 
@@ -94,7 +94,7 @@ namespace HospitalManagementSystem
             // panel4
             // 
             this.panel4.Controls.Add(this.TestsNumber);
-            this.panel4.Controls.Add(this.pictureBox3);
+            this.panel4.Controls.Add(this.LabTestsBox);
             this.panel4.Location = new System.Drawing.Point(696, 67);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(306, 101);
@@ -110,20 +110,20 @@ namespace HospitalManagementSystem
             this.TestsNumber.TabIndex = 1;
             this.TestsNumber.Text = "ANALIZE";
             // 
-            // pictureBox3
+            // LabTestsBox
             // 
-            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(3, 3);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(94, 95);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox3.TabIndex = 0;
-            this.pictureBox3.TabStop = false;
+            this.LabTestsBox.Image = ((System.Drawing.Image)(resources.GetObject("LabTestsBox.Image")));
+            this.LabTestsBox.Location = new System.Drawing.Point(3, 3);
+            this.LabTestsBox.Name = "LabTestsBox";
+            this.LabTestsBox.Size = new System.Drawing.Size(94, 95);
+            this.LabTestsBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.LabTestsBox.TabIndex = 0;
+            this.LabTestsBox.TabStop = false;
             // 
             // panel6
             // 
             this.panel6.Controls.Add(this.DoctorsNumber);
-            this.panel6.Controls.Add(this.pictureBox5);
+            this.panel6.Controls.Add(this.DoctorBox);
             this.panel6.Location = new System.Drawing.Point(365, 67);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(306, 101);
@@ -139,20 +139,20 @@ namespace HospitalManagementSystem
             this.DoctorsNumber.TabIndex = 1;
             this.DoctorsNumber.Text = "DOCTORI";
             // 
-            // pictureBox5
+            // DoctorBox
             // 
-            this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
-            this.pictureBox5.Location = new System.Drawing.Point(3, 3);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(94, 95);
-            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox5.TabIndex = 0;
-            this.pictureBox5.TabStop = false;
+            this.DoctorBox.Image = ((System.Drawing.Image)(resources.GetObject("DoctorBox.Image")));
+            this.DoctorBox.Location = new System.Drawing.Point(3, 3);
+            this.DoctorBox.Name = "DoctorBox";
+            this.DoctorBox.Size = new System.Drawing.Size(94, 95);
+            this.DoctorBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.DoctorBox.TabIndex = 0;
+            this.DoctorBox.TabStop = false;
             // 
             // panel3
             // 
             this.panel3.Controls.Add(this.PatientsNumber);
-            this.panel3.Controls.Add(this.pictureBox2);
+            this.panel3.Controls.Add(this.PatientBox);
             this.panel3.Location = new System.Drawing.Point(28, 67);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(306, 101);
@@ -168,15 +168,15 @@ namespace HospitalManagementSystem
             this.PatientsNumber.TabIndex = 1;
             this.PatientsNumber.Text = "PACIENTI";
             // 
-            // pictureBox2
+            // PatientBox
             // 
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(3, 3);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(94, 95);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 0;
-            this.pictureBox2.TabStop = false;
+            this.PatientBox.Image = ((System.Drawing.Image)(resources.GetObject("PatientBox.Image")));
+            this.PatientBox.Location = new System.Drawing.Point(3, 3);
+            this.PatientBox.Name = "PatientBox";
+            this.PatientBox.Size = new System.Drawing.Size(94, 95);
+            this.PatientBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.PatientBox.TabIndex = 0;
+            this.PatientBox.TabStop = false;
             // 
             // PatientsLbl
             // 
@@ -190,16 +190,16 @@ namespace HospitalManagementSystem
             this.PatientsLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.PatientsLbl.Click += new System.EventHandler(this.PatientsLbl_Click);
             // 
-            // patientsImg
+            // PatientsImg
             // 
-            this.patientsImg.Image = ((System.Drawing.Image)(resources.GetObject("patientsImg.Image")));
-            this.patientsImg.Location = new System.Drawing.Point(27, 165);
-            this.patientsImg.Name = "patientsImg";
-            this.patientsImg.Size = new System.Drawing.Size(50, 51);
-            this.patientsImg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.patientsImg.TabIndex = 2;
-            this.patientsImg.TabStop = false;
-            this.patientsImg.Click += new System.EventHandler(this.patientsImg_Click);
+            this.PatientsImg.Image = ((System.Drawing.Image)(resources.GetObject("PatientsImg.Image")));
+            this.PatientsImg.Location = new System.Drawing.Point(27, 165);
+            this.PatientsImg.Name = "PatientsImg";
+            this.PatientsImg.Size = new System.Drawing.Size(50, 51);
+            this.PatientsImg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.PatientsImg.TabIndex = 2;
+            this.PatientsImg.TabStop = false;
+            this.PatientsImg.Click += new System.EventHandler(this.PatientsImg_Click);
             // 
             // DoctorsLbl
             // 
@@ -213,16 +213,16 @@ namespace HospitalManagementSystem
             this.DoctorsLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.DoctorsLbl.Click += new System.EventHandler(this.DoctorsLbl_Click);
             // 
-            // imageDoctor
+            // DoctorsImg
             // 
-            this.imageDoctor.Image = ((System.Drawing.Image)(resources.GetObject("imageDoctor.Image")));
-            this.imageDoctor.Location = new System.Drawing.Point(27, 222);
-            this.imageDoctor.Name = "imageDoctor";
-            this.imageDoctor.Size = new System.Drawing.Size(50, 51);
-            this.imageDoctor.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.imageDoctor.TabIndex = 4;
-            this.imageDoctor.TabStop = false;
-            this.imageDoctor.Click += new System.EventHandler(this.imageDoctor_Click);
+            this.DoctorsImg.Image = ((System.Drawing.Image)(resources.GetObject("DoctorsImg.Image")));
+            this.DoctorsImg.Location = new System.Drawing.Point(27, 222);
+            this.DoctorsImg.Name = "DoctorsImg";
+            this.DoctorsImg.Size = new System.Drawing.Size(50, 51);
+            this.DoctorsImg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.DoctorsImg.TabIndex = 4;
+            this.DoctorsImg.TabStop = false;
+            this.DoctorsImg.Click += new System.EventHandler(this.DoctorsImg_Click);
             // 
             // LabTestsLbl
             // 
@@ -236,16 +236,16 @@ namespace HospitalManagementSystem
             this.LabTestsLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.LabTestsLbl.Click += new System.EventHandler(this.LabTestsLbl_Click);
             // 
-            // testsImg
+            // LabTestsImg
             // 
-            this.testsImg.Image = ((System.Drawing.Image)(resources.GetObject("testsImg.Image")));
-            this.testsImg.Location = new System.Drawing.Point(27, 328);
-            this.testsImg.Name = "testsImg";
-            this.testsImg.Size = new System.Drawing.Size(50, 51);
-            this.testsImg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.testsImg.TabIndex = 6;
-            this.testsImg.TabStop = false;
-            this.testsImg.Click += new System.EventHandler(this.testsImg_Click);
+            this.LabTestsImg.Image = ((System.Drawing.Image)(resources.GetObject("LabTestsImg.Image")));
+            this.LabTestsImg.Location = new System.Drawing.Point(27, 328);
+            this.LabTestsImg.Name = "LabTestsImg";
+            this.LabTestsImg.Size = new System.Drawing.Size(50, 51);
+            this.LabTestsImg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.LabTestsImg.TabIndex = 6;
+            this.LabTestsImg.TabStop = false;
+            this.LabTestsImg.Click += new System.EventHandler(this.LabTestsImg_Click);
             // 
             // ReceptionistsLbl
             // 
@@ -259,45 +259,45 @@ namespace HospitalManagementSystem
             this.ReceptionistsLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.ReceptionistsLbl.Click += new System.EventHandler(this.ReceptionistsLbl_Click);
             // 
-            // recepImg
+            // ReceptionistsImg
             // 
-            this.recepImg.Image = ((System.Drawing.Image)(resources.GetObject("recepImg.Image")));
-            this.recepImg.Location = new System.Drawing.Point(27, 385);
-            this.recepImg.Name = "recepImg";
-            this.recepImg.Size = new System.Drawing.Size(50, 51);
-            this.recepImg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.recepImg.TabIndex = 8;
-            this.recepImg.TabStop = false;
-            this.recepImg.Click += new System.EventHandler(this.recepImg_Click);
+            this.ReceptionistsImg.Image = ((System.Drawing.Image)(resources.GetObject("ReceptionistsImg.Image")));
+            this.ReceptionistsImg.Location = new System.Drawing.Point(27, 385);
+            this.ReceptionistsImg.Name = "ReceptionistsImg";
+            this.ReceptionistsImg.Size = new System.Drawing.Size(50, 51);
+            this.ReceptionistsImg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ReceptionistsImg.TabIndex = 8;
+            this.ReceptionistsImg.TabStop = false;
+            this.ReceptionistsImg.Click += new System.EventHandler(this.ReceptionistsImg_Click);
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.panel1.Controls.Add(this.pictureBox4);
+            this.panel1.Controls.Add(this.PrescripImg);
             this.panel1.Controls.Add(this.PrescripLbl);
-            this.panel1.Controls.Add(this.recepImg);
+            this.panel1.Controls.Add(this.ReceptionistsImg);
             this.panel1.Controls.Add(this.ReceptionistsLbl);
-            this.panel1.Controls.Add(this.testsImg);
+            this.panel1.Controls.Add(this.LabTestsImg);
             this.panel1.Controls.Add(this.LabTestsLbl);
-            this.panel1.Controls.Add(this.imageDoctor);
+            this.panel1.Controls.Add(this.DoctorsImg);
             this.panel1.Controls.Add(this.DoctorsLbl);
-            this.panel1.Controls.Add(this.patientsImg);
+            this.panel1.Controls.Add(this.PatientsImg);
             this.panel1.Controls.Add(this.PatientsLbl);
             this.panel1.Location = new System.Drawing.Point(1, -1);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(204, 781);
             this.panel1.TabIndex = 0;
             // 
-            // pictureBox4
+            // PrescripImg
             // 
-            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(27, 275);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(50, 51);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox4.TabIndex = 10;
-            this.pictureBox4.TabStop = false;
-            this.pictureBox4.Click += new System.EventHandler(this.pictureBox4_Click);
+            this.PrescripImg.Image = ((System.Drawing.Image)(resources.GetObject("PrescripImg.Image")));
+            this.PrescripImg.Location = new System.Drawing.Point(27, 275);
+            this.PrescripImg.Name = "PrescripImg";
+            this.PrescripImg.Size = new System.Drawing.Size(50, 51);
+            this.PrescripImg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.PrescripImg.TabIndex = 10;
+            this.PrescripImg.TabStop = false;
+            this.PrescripImg.Click += new System.EventHandler(this.PrescripImg_Click);
             // 
             // PrescripLbl
             // 
@@ -341,20 +341,20 @@ namespace HospitalManagementSystem
             this.panel2.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LabTestsBox)).EndInit();
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DoctorBox)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.patientsImg)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imageDoctor)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.testsImg)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.recepImg)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PatientBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PatientsImg)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DoctorsImg)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LabTestsImg)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ReceptionistsImg)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PrescripImg)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Exit)).EndInit();
             this.ResumeLayout(false);
 
@@ -364,25 +364,25 @@ namespace HospitalManagementSystem
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox PatientBox;
         private System.Windows.Forms.Label PatientsNumber;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label TestsNumber;
-        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.PictureBox LabTestsBox;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Label DoctorsNumber;
-        private System.Windows.Forms.PictureBox pictureBox5;
+        private System.Windows.Forms.PictureBox DoctorBox;
         private System.Windows.Forms.Label PatientsLbl;
-        private System.Windows.Forms.PictureBox patientsImg;
+        private System.Windows.Forms.PictureBox PatientsImg;
         private System.Windows.Forms.Label DoctorsLbl;
-        private System.Windows.Forms.PictureBox imageDoctor;
+        private System.Windows.Forms.PictureBox DoctorsImg;
         private System.Windows.Forms.Label LabTestsLbl;
-        private System.Windows.Forms.PictureBox testsImg;
+        private System.Windows.Forms.PictureBox LabTestsImg;
         private System.Windows.Forms.Label ReceptionistsLbl;
-        private System.Windows.Forms.PictureBox recepImg;
+        private System.Windows.Forms.PictureBox ReceptionistsImg;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox Exit;
-        private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.PictureBox PrescripImg;
         private System.Windows.Forms.Label PrescripLbl;
     }
 }

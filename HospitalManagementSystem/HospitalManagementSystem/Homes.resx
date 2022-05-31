@@ -9391,7 +9391,7 @@
         NH5IWbCkH/9/Jtwb/tJ7K+gAAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="pictureBox3.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="LabTestsBox.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAJQAAACvCAYAAAAbgfe6AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
         wwAADsMBx2+oZAAAL1VJREFUeF7tXQV4FVfTpoW4u+BatMHbAlVaCkFCEkKIC1GCe6HIT4tLcdeixTVQ
@@ -9599,7 +9599,7 @@
         KgwKlVAqDIi7+H9ATG9KEdt8BQAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="pictureBox5.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="DoctorBox.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAJUAAACsCAYAAABy1+4qAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
         wwAADsMBx2+oZAAAToFJREFUeF7tXQVgVNfSbgvEPSS4uxRKgVIKFUpL0ZCEKPEEgkuw4O7u0OJS3KW4
@@ -9940,7 +9940,7 @@
         nTNBlcmPmW/j/wDHErplsA2n/gAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="pictureBox2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="PatientBox.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAKwAAACcCAYAAADiS0B1AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
         wwAADsMBx2+oZAAANrpJREFUeF7tfQV8FVf2/+/fYiFAPFgCQYu7O6W4S4gQJyFIcCe4u7u7S3B3d3co
@@ -10180,7 +10180,7 @@
         rkJggg==
 </value>
   </data>
-  <data name="patientsImg.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="PatientsImg.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAKwAAACcCAYAAADiS0B1AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
         wwAADsMBx2+oZAAANrpJREFUeF7tfQV8FVf2/+/fYiFAPFgCQYu7O6W4S4gQJyFIcCe4u7u7S3B3d3co
@@ -10420,7 +10420,7 @@
         rkJggg==
 </value>
   </data>
-  <data name="imageDoctor.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="DoctorsImg.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAJUAAACsCAYAAABy1+4qAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
         wwAADsMBx2+oZAAAToFJREFUeF7tXQVgVNfSbgvEPSS4uxRKgVIKFUpL0ZCEKPEEgkuw4O7u0OJS3KW4
@@ -10761,7 +10761,7 @@
         nTNBlcmPmW/j/wDHErplsA2n/gAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="testsImg.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="LabTestsImg.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAFAAAABSCAYAAADD2VOmAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAS
         dAAAEnQB3mYfeAAAE85JREFUeF7t22WPHUcaBeD9XfkQJZHCzMwOMzMzMzvMzMzMzMzMzKnNU9pjVVp3
@@ -10852,7 +10852,7 @@
         rkJggg==
 </value>
   </data>
-  <data name="recepImg.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="ReceptionistsImg.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAK0AAACfCAYAAACLHVnlAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
         wwAADsMBx2+oZAAAXORJREFUeF7tfQdglkXy/v+nQEivEHrvvauAgghIbwklIT0hoffee+9VpCO99957
@@ -11254,7 +11254,7 @@
         SgdtOqU5SgdtOqU5SgdtOqU5SgdtOqU5SgdtOqUx+gr/HzvhCpCeDIv+AAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="pictureBox4.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="PrescripImg.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAJQAAACvCAYAAAAbgfe6AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
         wwAADsMBx2+oZAAAL1VJREFUeF7tXQV4FVfTpoW4u+BatMHbAlVaCkFCEkKIC1GCe6HIT4tLcdeixTVQ

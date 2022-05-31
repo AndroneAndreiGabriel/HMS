@@ -33,7 +33,7 @@ namespace HospitalManagementSystem
                 {
                     MessageBox.Show("Introduceti userul si parola pentru administrator");
                 }
-                else if (Username.Text == "Administrator" && Password.Text == "Admin")
+                else if (Username.Text == "Administrator" && Password.Text == "Administrator")
                 {
                     Role = Username.Text;
                     Homes Object = new Homes();

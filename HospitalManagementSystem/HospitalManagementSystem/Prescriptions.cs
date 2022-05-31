@@ -319,14 +319,14 @@ namespace HospitalManagementSystem
             e.Graphics.DrawString("\n\t" + "Semnatura si parafa", new Font("Times New Roman", 15, FontStyle.Regular), Brushes.Red, new Point(100, 800));
         }
 
-        private void ReturnHome_Click(object sender, EventArgs e)
+        private void ReturnHomeLbl_Click(object sender, EventArgs e)
         {
             Homes obj = new Homes();
             obj.Show();
             this.Hide();
         }
 
-        private void pictureBox9_Click(object sender, EventArgs e)
+        private void ReturnHomeImg_Click(object sender, EventArgs e)
         {
             Homes obj = new Homes();
             obj.Show();

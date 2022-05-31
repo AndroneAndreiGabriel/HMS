@@ -32,10 +32,10 @@ namespace HospitalManagementSystem
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
+            this.UsernameLbl = new System.Windows.Forms.Label();
             this.UserType = new System.Windows.Forms.ComboBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            this.PasswordLbl = new System.Windows.Forms.Label();
+            this.UserTypeLbl = new System.Windows.Forms.Label();
             this.Username = new System.Windows.Forms.TextBox();
             this.Password = new System.Windows.Forms.TextBox();
             this.Authentication = new System.Windows.Forms.Button();
@@ -64,16 +64,16 @@ namespace HospitalManagementSystem
             this.panel1.Size = new System.Drawing.Size(501, 83);
             this.panel1.TabIndex = 1;
             // 
-            // label2
+            // UsernameLbl
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(46, 237);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(117, 23);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "ID Utilizator";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.UsernameLbl.AutoSize = true;
+            this.UsernameLbl.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.UsernameLbl.Location = new System.Drawing.Point(46, 237);
+            this.UsernameLbl.Name = "UsernameLbl";
+            this.UsernameLbl.Size = new System.Drawing.Size(117, 23);
+            this.UsernameLbl.TabIndex = 2;
+            this.UsernameLbl.Text = "ID Utilizator";
+            this.UsernameLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // UserType
             // 
@@ -87,27 +87,27 @@ namespace HospitalManagementSystem
             this.UserType.Size = new System.Drawing.Size(205, 30);
             this.UserType.TabIndex = 3;
             // 
-            // label3
+            // PasswordLbl
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(46, 297);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(65, 23);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "Parola";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.PasswordLbl.AutoSize = true;
+            this.PasswordLbl.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PasswordLbl.Location = new System.Drawing.Point(46, 297);
+            this.PasswordLbl.Name = "PasswordLbl";
+            this.PasswordLbl.Size = new System.Drawing.Size(65, 23);
+            this.PasswordLbl.TabIndex = 4;
+            this.PasswordLbl.Text = "Parola";
+            this.PasswordLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label4
+            // UserTypeLbl
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(46, 176);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(120, 23);
-            this.label4.TabIndex = 5;
-            this.label4.Text = "Tip utilizator";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.UserTypeLbl.AutoSize = true;
+            this.UserTypeLbl.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.UserTypeLbl.Location = new System.Drawing.Point(46, 176);
+            this.UserTypeLbl.Name = "UserTypeLbl";
+            this.UserTypeLbl.Size = new System.Drawing.Size(120, 23);
+            this.UserTypeLbl.TabIndex = 5;
+            this.UserTypeLbl.Text = "Tip utilizator";
+            this.UserTypeLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Username
             // 
@@ -167,10 +167,10 @@ namespace HospitalManagementSystem
             this.Controls.Add(this.Authentication);
             this.Controls.Add(this.Password);
             this.Controls.Add(this.Username);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
+            this.Controls.Add(this.UserTypeLbl);
+            this.Controls.Add(this.PasswordLbl);
             this.Controls.Add(this.UserType);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.UsernameLbl);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -190,10 +190,10 @@ namespace HospitalManagementSystem
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label UsernameLbl;
         private System.Windows.Forms.ComboBox UserType;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label PasswordLbl;
+        private System.Windows.Forms.Label UserTypeLbl;
         private System.Windows.Forms.TextBox Username;
         private System.Windows.Forms.TextBox Password;
         private System.Windows.Forms.Button Authentication;
