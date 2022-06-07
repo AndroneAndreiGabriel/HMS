@@ -13,6 +13,9 @@ namespace HospitalManagementSystem
         {
             InitializeComponent();
             DisplayTests();
+
+            TestsDGV.ReadOnly = true;
+            TestsDGV.AllowUserToAddRows = false;
         }
 
         private void DisplayTests()
@@ -38,21 +41,6 @@ namespace HospitalManagementSystem
         private void Exit_Click(object sender, EventArgs e)
         {
             Application.Exit();
-        }
-
-        private void TestsDGV_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.RowIndex < 0)
-            {
-                return;
-            }
-            else
-            {
-                Key = Convert.ToInt32(TestsDGV.Rows[e.RowIndex].Cells[0].Value);
-
-                TestName.Text = TestsDGV.Rows[e.RowIndex].Cells[1].Value.ToString();
-                TestCost.Text = TestsDGV.Rows[e.RowIndex].Cells[2].Value.ToString();
-            }
         }
 
         private void AddTest_Click(object sender, EventArgs e)
@@ -148,6 +136,21 @@ namespace HospitalManagementSystem
             Homes obj = new Homes();
             obj.Show();
             this.Hide();
+        }
+
+        private void TestsDGV_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex < 0)
+            {
+                return;
+            }
+            else
+            {
+                Key = Convert.ToInt32(TestsDGV.Rows[e.RowIndex].Cells[0].Value);
+
+                TestName.Text = TestsDGV.Rows[e.RowIndex].Cells[1].Value.ToString();
+                TestCost.Text = TestsDGV.Rows[e.RowIndex].Cells[2].Value.ToString();
+            }
         }
     }
 }

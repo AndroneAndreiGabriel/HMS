@@ -297,7 +297,7 @@ namespace HospitalManagementSystem
 
                 PrescriptionTxt.Text = "                                 \n\n" +
                 "******************PRESCRIPTIE******************" + "\n\n\n" +
-                "Eliberata la: " + DateTime.Today + "\n\n\n\n" +
+                "Eliberata la: " + DateTime.Now + "\n\n\n" +
                 "Doctor: " + PrescripDGV.Rows[e.RowIndex].Cells[2].Value.ToString() + "\n\n\n" +
                 "Patient: " + PrescripDGV.Rows[e.RowIndex].Cells[4].Value.ToString() + "\n\n\n" +
                 "Test: " + PrescripDGV.Rows[e.RowIndex].Cells[6].Value.ToString() + "\n\n\n" +
@@ -316,7 +316,7 @@ namespace HospitalManagementSystem
         private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
         {
             e.Graphics.DrawString(PrescriptionTxt.Text + "\n", new Font("Times New Roman", 18, FontStyle.Regular), Brushes.Black, new Point(95, 80));
-            e.Graphics.DrawString("\n\t" + "Semnatura si parafa", new Font("Times New Roman", 15, FontStyle.Regular), Brushes.Red, new Point(100, 800));
+            e.Graphics.DrawString("\n\t\t\t\t\t" + "Semnatura si parafa", new Font("Times New Roman", 15, FontStyle.Regular), Brushes.Red, new Point(100, 800));
         }
 
         private void ReturnHomeLbl_Click(object sender, EventArgs e)

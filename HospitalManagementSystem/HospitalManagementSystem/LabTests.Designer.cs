@@ -156,7 +156,7 @@ namespace HospitalManagementSystem
             this.TestsDGV.RowTemplate.Height = 24;
             this.TestsDGV.Size = new System.Drawing.Size(1012, 396);
             this.TestsDGV.TabIndex = 48;
-            this.TestsDGV.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.TestsDGV_CellContentClick);
+            this.TestsDGV.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.TestsDGV_CellClick);
             // 
             // AddTest
             // 
